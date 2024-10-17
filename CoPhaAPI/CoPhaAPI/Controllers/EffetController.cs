@@ -1,5 +1,6 @@
 ﻿using CoPhaAPI.Data;
 using CoPhaAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,6 +9,7 @@ namespace CoPhaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]  // Déclare que cette classe est un contrôleur d'API
+    [Authorize] // pour le token
     public class EffetController : ControllerBase
     {
         private readonly AppDbContext _context;
