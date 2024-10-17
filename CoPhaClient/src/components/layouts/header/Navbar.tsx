@@ -88,19 +88,7 @@ export const Navbar = () => {
               </Link>
             </div>
             <div className="flex items-center">
-              <Link href="/contact" passHref legacyBehavior>
-                <a
-                  className={cn(
-                    'text-muted-foreground',
-                    navigationMenuTriggerStyle,
-                    buttonVariants({
-                      variant: 'ghost',
-                    })
-                  )}
-                >
-                  Contact
-                </a>
-              </Link>
+            
 
               <NavigationMenu>
                 <NavigationMenuList>
@@ -165,13 +153,26 @@ export const Navbar = () => {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
+                <Link href="/contact" passHref legacyBehavior>
+                <a
+                  className={cn(
+                    'text-muted-foreground',
+                    navigationMenuTriggerStyle,
+                    buttonVariants({
+                      variant: 'ghost',
+                    })
+                  )}
+                >
+                  Contact Us
+                </a>
+              </Link>
             </div>
           </div>
 
           <div className="flex gap-2">
             <Link href="/auth/login" passHref legacyBehavior>
               <a>
-                <Button variant={'outline'}>Connexion</Button>
+                <Button variant={'outline'}>Connection</Button>
               </a>
             </Link>
           </div>
@@ -215,9 +216,7 @@ export const Navbar = () => {
                 </SheetHeader>
 
                 <div className="my-8 flex flex-col gap-4">
-                  <Link href="/contact" passHref legacyBehavior>
-                    <a className="font-semibold">Contact</a>
-                  </Link>
+                  
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="Produits" className="border-b-0">
                       <AccordionTrigger className="mb-4 py-0 font-semibold hover:no-underline">
@@ -273,6 +272,9 @@ export const Navbar = () => {
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
+                  <Link href="/contact" passHref legacyBehavior>
+                    <a className="font-semibold">Contact Us</a>
+                  </Link>
                 </div>
 
                 <div className="border-t pt-4">
