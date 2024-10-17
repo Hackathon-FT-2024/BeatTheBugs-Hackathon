@@ -32,3 +32,5 @@
 /.vs/BeatTheBugs-Hackathon/v17/.wsuo
 /.vs/BeatTheBugs-Hackathon/v17/DocumentLayout.backup.json
 /.vs/BeatTheBugs-Hackathon/v17/DocumentLayout.json
+/CoPhaAPI/CoPhaAPI/obj/CoPhaAPI.csproj.nuget.g.targets
+*.v2
