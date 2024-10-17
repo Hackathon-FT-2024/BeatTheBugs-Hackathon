@@ -93,9 +93,11 @@ export const Navbar = () => {
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem className="text-muted-foreground">
-                    <NavigationMenuTrigger>
-                      <span>Produits</span>
+                    <Link href="/products" passHref legacyBehavior>
+                       <NavigationMenuTrigger>
+                      <span>Shop</span>
                     </NavigationMenuTrigger>
+                    </Link>
                     <NavigationMenuContent>
                       <ul className="w-80 p-3">
                         {subMenuItemsOne.map((item, idx) => (
@@ -172,7 +174,7 @@ export const Navbar = () => {
           <div className="flex gap-2">
             <Link href="/auth/login" passHref legacyBehavior>
               <a>
-                <Button variant={'outline'}>Connection</Button>
+                <Button variant={'outline'}>Log In</Button>
               </a>
             </Link>
           </div>
@@ -220,7 +222,7 @@ export const Navbar = () => {
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="Produits" className="border-b-0">
                       <AccordionTrigger className="mb-4 py-0 font-semibold hover:no-underline">
-                        Produits
+                        Shop
                       </AccordionTrigger>
                       <AccordionContent className="mt-2">
                         {subMenuItemsOne.map((item, idx) => (
@@ -355,7 +357,7 @@ export const Navbar = () => {
                   <div className="mt-2 flex flex-col gap-3">
                     <Link href="/auth/login" passHref legacyBehavior>
                       <a>
-                        <Button variant={'outline'}>Connexion</Button>
+                        <Button variant={'outline'}>Log In</Button>
                       </a>
                     </Link>
                   </div>
