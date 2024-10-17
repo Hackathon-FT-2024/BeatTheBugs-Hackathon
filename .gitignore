@@ -2,6 +2,7 @@
 # Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
 ################################################################################
 
+<<<<<<< HEAD
 /CoPhaAPI/CoPhaAPI/.gitignore.txt
 /.gitignore
 *.vsidx
@@ -34,3 +35,16 @@
 /.vs/BeatTheBugs-Hackathon/v17/DocumentLayout.json
 /CoPhaAPI/CoPhaAPI/obj/CoPhaAPI.csproj.nuget.g.targets
 *.v2
+=======
+/CoPhaAPI/.vs/CoPhaAPI
+>>>>>>> 623faa9d0378982a3de3647a131d123c2b6ea273
+/CoPhaAPI/CoPhaAPI/appsettings.json
+/CoPhaAPI/CoPhaAPI/obj/Debug/net8.0/CoPhaAPI.AssemblyInfo.cs
+/CoPhaAPI/CoPhaAPI/obj/Debug/net8.0/CoPhaAPI.AssemblyInfoInputs.cache
+/CoPhaAPI/CoPhaAPI/obj/project.assets.json
+/CoPhaAPI/CoPhaAPI/obj/project.nuget.cache
+/CoPhaAPI/CoPhaAPI/obj/CoPhaAPI.csproj.nuget.g.targets
+/CoPhaAPI/CoPhaAPI/obj/CoPhaAPI.csproj.nuget.g.props
+/CoPhaAPI/CoPhaAPI/obj/CoPhaAPI.csproj.nuget.dgspec.json
+/CoPhaAPI/CoPhaAPI/obj/Debug/net8.0/CoPhaAPI.csproj.AssemblyReference.cache
+/CoPhaAPI/CoPhaAPI/obj/Debug/net8.0/CoPhaAPI.assets.cache
