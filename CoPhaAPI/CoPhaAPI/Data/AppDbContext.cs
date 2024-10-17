@@ -1,5 +1,7 @@
 ﻿using CoPhaAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.FileIO;
+using System.Numerics;
 
 namespace CoPhaAPI.Data
 {
@@ -11,8 +13,14 @@ namespace CoPhaAPI.Data
         public DbSet<TypePopulation> TypePopulations { get; set; }
         public DbSet<RelCptPop> RelCptPops { get; set; }
 
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+       : base(options)
+        {
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<RelCptEffet>()
                 .HasKey(rce => new { rce.IdentCpt, rce.IdentEffet });
             modelBuilder.Entity<RelCptEffet>()
@@ -35,7 +43,58 @@ namespace CoPhaAPI.Data
                 .WithMany(tp => tp.RelCptPops)
                 .HasForeignKey(rcp => rcp.IdentPopulation);
 
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<CptAlim>().HasData(GetCptAlims());
+        }
+
+        private static IEnumerable<CptAlim> GetCptAlims()
+        {
+            string[] p = { Directory.GetCurrentDirectory(), "Import", "liste-des-complements-alimentaires-declares.csv" };
+            var csvFilePath = Path.Combine(p);
+            var cptAlims = new List<CptAlim>();
+
+            using (var reader = new StreamReader(csvFilePath))
+            {
+                using (var parser = new TextFieldParser(reader))
+                {
+                    parser.SetDelimiters(";");
+                    parser.HasFieldsEnclosedInQuotes = true;
+
+                    int idToIncrement = 1;
+                    while (!parser.EndOfData)
+                    {
+                        var values = parser.ReadFields();
+                        if (values != null)
+                        {
+                            if (values[0].Contains("NomCommercial")) continue; //c'est l'entête donc on passe à la ligne suivante
+
+                            var cptAlim = new CptAlim
+                            {
+                                Ident = idToIncrement,
+                                Nom = values[0],
+                                Marque = values[1],
+                                FormeGalenique = values[2],
+                                Responsable = values[3],
+                                DoseJournaliere = values[4],
+                                ModeEmploi = values[5],
+                                MisesEnGarde = values[6],
+                                Gamme = values[7],
+                                Aromes = values[8],
+                                PopulationARisques = values[9],
+                                Plantes = values[10],
+                                FamillePlantes = values[11],
+                                PartiePlante = values[12],
+                                AutresIngredients = values[13],
+                                ObjectifEffets = values[14],
+                                Image = null
+                            };
+                            cptAlims.Add(cptAlim);
+                            idToIncrement++;
+                        }
+                    }
+                }
+            }
+
+            return cptAlims;
         }
     }
 }
