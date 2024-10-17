@@ -9,21 +9,21 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <a href="/" className="flex items-center">
               <Image
-                src={be}
+                src="https://www.shadcnblocks.com/images/block/block-1.svg"
                 className="mr-3 h-6 dark:hidden block"
                 width={30}
                 height={30}
-                alt="BTB Logo"
+                alt="CoPha"
               />
               <Image
-                src={be}
+                src="https://www.shadcnblocks.com/images/block/block-1.svg"
                 className="mr-3 h-6 hidden dark:block"
                 width={30}
                 height={30}
-                alt="BTB Logo"
+                alt="CoPha"
               />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-               Beat The Bugs
+               CoPha
               </span>
             </a>
 
