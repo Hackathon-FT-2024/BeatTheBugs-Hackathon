@@ -1,3 +1,5 @@
+
+
 import { Book, Menu, Sunset, Trees, Zap } from 'lucide-react';
 import Link from 'next/link';
 
@@ -71,7 +73,7 @@ export const Navbar = () => {
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <Link href="/" passHref> {/* Use Link component directly */}
+              <Link href="/" passHref> 
                 <div className="flex items-center gap-2 cursor-pointer">
                   <img
                     src="https://www.shadcnblocks.com/images/block/block-1.svg"
@@ -162,7 +164,9 @@ export const Navbar = () => {
             </div>
           </div>
           <div className="flex gap-2">
-            <Button variant={'outline'}>Connexion</Button>
+            <Link href="/auth/login" passHref legacyBehavior>
+              <Button variant={'outline'}>Connexion</Button>
+            </Link>
           </div>
         </nav>
         <div className="block lg:hidden">
@@ -184,7 +188,8 @@ export const Navbar = () => {
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
-                    <div className="flex items-center gap-2 mt-[-4%] ml-[-2%]">
+                    <Link href="/" passHref>
+                          <div className="flex items-center gap-2 mt-[-4%] ml-[-2%]">
                       <img
                         src="https://www.shadcnblocks.com/images/block/block-1.svg"
                         className="w-8"
@@ -192,6 +197,7 @@ export const Navbar = () => {
                       />
                       <span className="text-xl font-bold">CoPha</span>
                     </div>
+                    </Link>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="my-8 flex flex-col gap-4">
@@ -323,7 +329,9 @@ export const Navbar = () => {
                     </a>
                   </div>
                   <div className="mt-2 flex flex-col gap-3">
-                    <Button variant={'outline'}>Connexion</Button>
+                    <Link href="/auth/login" passHref legacyBehavior>
+                      <Button variant={'outline'}>Connexion</Button>
+                    </Link>
                   </div>
                 </div>
               </SheetContent>

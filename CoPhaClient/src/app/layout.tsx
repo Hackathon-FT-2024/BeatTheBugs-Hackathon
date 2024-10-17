@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Outfit } from "next/font/google";
-import { Navbar } from "../components/layouts/header/Navbar";
+import { Navbar } from "@/components/layouts/header/Navbar";
 import Footer from "@/components/layouts/Footer";
 import {PrivateLayout} from "../components/layouts/PrivateLayout"
 
