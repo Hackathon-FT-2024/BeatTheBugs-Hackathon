@@ -1,53 +1,3 @@
-// import { Button } from "@/components/ui/button";
-// import Link from "next/link";
-
-
-// export const Navbar = () => {
-//   return (
-//     <header className="mx-auto container px-4 lg:px-6 h-14 flex items-center">
-//       <Link className="flex items-center justify-center" href="/">
-//         🧬
-//         <span className="hidden lg:block ml-2 text-xl font-semibold text-gray-900 dark:text-gray-100">
-//           Beat The Bugs
-//         </span>
-//         <span className="block lg:hidden ml-2 text-xl font-semibold text-gray-900 dark:text-gray-100">
-//           Nextstep
-//         </span>
-//       </Link>
-//       <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
-//         <Link
-//           className="text-sm hidden lg:block font-medium hover:underline underline-offset-4"
-//           href="/"
-//         >
-//           Home
-//         </Link>
-//         <Link
-//           className="text-sm hidden lg:block font-medium hover:underline underline-offset-4"
-//           href="/about"
-//         >
-//           About
-//         </Link>
-//         <Link
-//           className="text-sm hidden lg:block font-medium hover:underline underline-offset-4"
-//           href="/contact"
-//         >
-//           Contact
-//         </Link>
-//         <Link
-//           className="text-sm font-medium hover:underline underline-offset-4"
-//           href="/auth/login"
-//         >
-//           <Button className="inline-flex items-center gap-2 justify-center rounded-md bg-gradient-to-r px-6 py-2 text-sm font-medium text-white shadow-lg transition-colors hover:from-blue-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-//             Login
-//           </Button>
-//         </Link>
-//       </nav>
-//     </header>
-//   );
-// };
-
-
-
 import { Book, Menu, Sunset, Trees, Zap } from 'lucide-react';
 
 import {
@@ -75,7 +25,7 @@ import {
 } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 
-const subMenuItemsOne = [
+const subMenuItemsTwo = [
   {
     title: 'Blog',
     description: 'The latest industry news, updates, and info',
@@ -99,27 +49,18 @@ const subMenuItemsOne = [
   },
 ];
 
-const subMenuItemsTwo = [
+const subMenuItemsOne = [
   {
-    title: 'Help Center',
-    description: 'Get all the answers you need right here',
+    title: 'Vitamines',
+    description: 'exemple',
     icon: <Zap className="size-5 shrink-0" />,
   },
   {
-    title: 'Contact Us',
-    description: 'We are here to help you with any questions you have',
+    title: 'Minérales',
+    description: 'exemple',
     icon: <Sunset className="size-5 shrink-0" />,
   },
-  {
-    title: 'Status',
-    description: 'Check the current status of our services and APIs',
-    icon: <Trees className="size-5 shrink-0" />,
-  },
-  {
-    title: 'Terms of Service',
-    description: 'Our terms and conditions for using our services',
-    icon: <Book className="size-5 shrink-0" />,
-  },
+
 ];
 
 export const Navbar = () => {
@@ -147,13 +88,13 @@ export const Navbar = () => {
                 )}
                 href="#"
               >
-                Home
+                Accueil
               </a>
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem className="text-muted-foreground">
                     <NavigationMenuTrigger>
-                      <span>Products</span>
+                      <span>Produits</span>
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="w-80 p-3">
@@ -213,36 +154,10 @@ export const Navbar = () => {
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-
-              <a
-                className={cn(
-                  'text-muted-foreground',
-                  navigationMenuTriggerStyle,
-                  buttonVariants({
-                    variant: 'ghost',
-                  }),
-                )}
-                href="#"
-              >
-                Pricing
-              </a>
-              <a
-                className={cn(
-                  'text-muted-foreground',
-                  navigationMenuTriggerStyle,
-                  buttonVariants({
-                    variant: 'ghost',
-                  }),
-                )}
-                href="#"
-              >
-                Blog
-              </a>
             </div>
           </div>
           <div className="flex gap-2">
-            <Button variant={'outline'}>Log in</Button>
-            <Button>Sign up</Button>
+            <Button variant={'outline'}>Connexion</Button>
           </div>
         </nav>
         <div className="block lg:hidden">
@@ -264,7 +179,7 @@ export const Navbar = () => {
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 mt-[-4%] ml-[-2%]">
                       <img
                         src="https://www.shadcnblocks.com/images/block/block-1.svg"
                         className="w-8"
@@ -276,12 +191,12 @@ export const Navbar = () => {
                 </SheetHeader>
                 <div className="my-8 flex flex-col gap-4">
                   <a href="#" className="font-semibold">
-                    Home
+                    Accueil
                   </a>
                   <Accordion type="single" collapsible className="w-full">
-                    <AccordionItem value="products" className="border-b-0">
+                    <AccordionItem value="Produits" className="border-b-0">
                       <AccordionTrigger className="mb-4 py-0 font-semibold hover:no-underline">
-                        Products
+                        Produits
                       </AccordionTrigger>
                       <AccordionContent className="mt-2">
                         {subMenuItemsOne.map((item, idx) => (
@@ -332,12 +247,6 @@ export const Navbar = () => {
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
-                  <a href="#" className="font-semibold">
-                    Pricing
-                  </a>
-                  <a href="#" className="font-semibold">
-                    Blog
-                  </a>
                 </div>
                 <div className="border-t pt-4">
                   <div className="grid grid-cols-2 justify-start">
@@ -409,8 +318,7 @@ export const Navbar = () => {
                     </a>
                   </div>
                   <div className="mt-2 flex flex-col gap-3">
-                    <Button variant={'outline'}>Log in</Button>
-                    <Button>Sign up</Button>
+                    <Button variant={'outline'}>Connexion</Button>
                   </div>
                 </div>
               </SheetContent>
