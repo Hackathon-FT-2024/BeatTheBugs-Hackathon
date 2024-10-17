@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/Users/sarahpham/Desktop/DEV/Hackathon/BeatTheBugs-Hackathon/CoPhaAPI/CoPhaAPI/CoPhaAPI.csproj": {}
+    "C:\\Users\\jerem\\source\\repos\\Hackathon-FT-2024\\BeatTheBugs-Hackathon\\CoPhaAPI\\CoPhaAPI\\CoPhaAPI.csproj": {}
   },
   "projects": {
-    "/Users/sarahpham/Desktop/DEV/Hackathon/BeatTheBugs-Hackathon/CoPhaAPI/CoPhaAPI/CoPhaAPI.csproj": {
+    "C:\\Users\\jerem\\source\\repos\\Hackathon-FT-2024\\BeatTheBugs-Hackathon\\CoPhaAPI\\CoPhaAPI\\CoPhaAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/sarahpham/Desktop/DEV/Hackathon/BeatTheBugs-Hackathon/CoPhaAPI/CoPhaAPI/CoPhaAPI.csproj",
+        "projectUniqueName": "C:\\Users\\jerem\\source\\repos\\Hackathon-FT-2024\\BeatTheBugs-Hackathon\\CoPhaAPI\\CoPhaAPI\\CoPhaAPI.csproj",
         "projectName": "CoPhaAPI",
-        "projectPath": "/Users/sarahpham/Desktop/DEV/Hackathon/BeatTheBugs-Hackathon/CoPhaAPI/CoPhaAPI/CoPhaAPI.csproj",
-        "packagesPath": "/Users/sarahpham/.nuget/packages/",
-        "outputPath": "/Users/sarahpham/Desktop/DEV/Hackathon/BeatTheBugs-Hackathon/CoPhaAPI/CoPhaAPI/obj/",
+        "projectPath": "C:\\Users\\jerem\\source\\repos\\Hackathon-FT-2024\\BeatTheBugs-Hackathon\\CoPhaAPI\\CoPhaAPI\\CoPhaAPI.csproj",
+        "packagesPath": "C:\\Users\\jerem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jerem\\source\\repos\\Hackathon-FT-2024\\BeatTheBugs-Hackathon\\CoPhaAPI\\CoPhaAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/sarahpham/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\jerem\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +62,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.6.2, )"
+              "version": "[6.9.0, )"
             }
           },
           "imports": [
@@ -77,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
