@@ -1,6 +1,6 @@
 // components/Product/ProductCard.tsx
 import Link from 'next/link';
-import { ProductContext } from '@/context/productContext'; 
+import { Product } from '@/context/productContext'; 
 
 // Define the props for ProductCard
 interface ProductCardProps {

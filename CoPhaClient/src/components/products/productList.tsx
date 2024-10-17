@@ -1,11 +1,16 @@
-// components/Product/ProductList.tsx
-import { useContext } from 'react';
-import ProductCard from './productCard';
-import ProductContext from '@/context/productContext';
-import { Product } from '@/context/productContext'; // Import the Product type
+
+import React, { useContext } from 'react';
+import ProductContext, { Product } from '@/context/productContext'; 
+import ProductCard from './productCard'; 
 
 const ProductList: React.FC = () => {
-  const { products } = useContext(ProductContext);
+  const productContext = useContext(ProductContext);;
+
+  if (!productContext) {
+    return <p>Context is not available</p>; 
+  }
+
+  const { products } = productContext; 
 
   if (!products || products.length === 0) {
     return <p>No products available</p>;
@@ -13,8 +18,8 @@ const ProductList: React.FC = () => {
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {products.map((product: Product, index: number) => (
-        <ProductCard key={index} product={product} index={index} />
+      {products.map((product: Product) => (
+        <ProductCard key={product.id} product={product} index={0} />
       ))}
     </div>
   );
