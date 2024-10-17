@@ -48,7 +48,7 @@ namespace CoPhaAPI.Data
 
         private static IEnumerable<CptAlim> GetCptAlims()
         {
-            string[] p = { Directory.GetCurrentDirectory(), "Import", "liste-des-complements-alimentaires-declares.csv" };
+            string[] p = { Directory.GetCurrentDirectory(), "Import", "liste2.csv" };
             var csvFilePath = Path.Combine(p);
             var cptAlims = new List<CptAlim>();
 

@@ -8,12 +8,12 @@ namespace CoPhaAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]  // Déclare que cette classe est un contrôleur d'API
-    public class ProduitController : ControllerBase
+    public class EffetController : ControllerBase
     {
         private readonly AppDbContext _context;
 
         // Injection du DbContext dans le contrôleur via le constructeur
-        public ProduitController(AppDbContext context)
+        public EffetController(AppDbContext context)
         {
             _context = context;
         }
