@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CoPhaAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+beb73b9afd4f6f17c8828f9a57795c0a509c5dea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f829e73e4ec8e522d229a74957566ada5d7cfac2")]
 [assembly: System.Reflection.AssemblyProductAttribute("CoPhaAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CoPhaAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
