@@ -1,5 +1,3 @@
-
-
 import { Book, Menu, Sunset, Trees, Zap } from 'lucide-react';
 import Link from 'next/link';
 
@@ -33,37 +31,42 @@ const subMenuItemsTwo = [
     title: 'Blog',
     description: 'The latest industry news, updates, and info',
     icon: <Book className="size-5 shrink-0" />,
+    link: '/blog',
   },
   {
-    title: 'Compnay',
+    title: 'Company',
     description: 'Our mission is to innovate and empower the world',
     icon: <Trees className="size-5 shrink-0" />,
+    link: '/company',
   },
   {
     title: 'Careers',
-    description: 'Browse job listing and discover our workspace',
+    description: 'Browse job listings and discover our workspace',
     icon: <Sunset className="size-5 shrink-0" />,
+    link: '/careers',
   },
   {
     title: 'Support',
     description:
       'Get in touch with our support team or visit our community forums',
     icon: <Zap className="size-5 shrink-0" />,
+    link: '/support',
   },
 ];
 
 const subMenuItemsOne = [
   {
     title: 'Vitamines',
-    description: 'exemple',
+    description: 'Exemple',
     icon: <Zap className="size-5 shrink-0" />,
+    link: '/produits/vitamines',
   },
   {
     title: 'Minérales',
-    description: 'exemple',
+    description: 'Exemple',
     icon: <Sunset className="size-5 shrink-0" />,
+    link: '/produits/minerales',
   },
-
 ];
 
 export const Navbar = () => {
@@ -73,30 +76,32 @@ export const Navbar = () => {
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <Link href="/" passHref> 
-                <div className="flex items-center gap-2 cursor-pointer">
+              <Link href="/" passHref legacyBehavior>
+                <a className="flex items-center gap-2 cursor-pointer">
                   <img
                     src="https://www.shadcnblocks.com/images/block/block-1.svg"
                     className="w-8"
                     alt="logo"
                   />
                   <span className="text-xl font-bold">CoPha</span>
-                </div>
+                </a>
               </Link>
             </div>
             <div className="flex items-center">
-              <a
-                className={cn(
-                  'text-muted-foreground',
-                  navigationMenuTriggerStyle,
-                  buttonVariants({
-                    variant: 'ghost',
-                  }),
-                )}
-                href="/"
-              >
-                Accueil
-              </a>
+              <Link href="/" passHref legacyBehavior>
+                <a
+                  className={cn(
+                    'text-muted-foreground',
+                    navigationMenuTriggerStyle,
+                    buttonVariants({
+                      variant: 'ghost',
+                    })
+                  )}
+                >
+                  Accueil
+                </a>
+              </Link>
+
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem className="text-muted-foreground">
@@ -105,14 +110,13 @@ export const Navbar = () => {
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="w-80 p-3">
-                        <NavigationMenuLink>
-                          {subMenuItemsOne.map((item, idx) => (
-                            <li key={idx}>
+                        {subMenuItemsOne.map((item, idx) => (
+                          <li key={idx}>
+                            <Link href={item.link} passHref legacyBehavior>
                               <a
                                 className={cn(
-                                  'flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+                                  'flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground'
                                 )}
-                                href="#"
                               >
                                 {item.icon}
                                 <div>
@@ -124,24 +128,24 @@ export const Navbar = () => {
                                   </p>
                                 </div>
                               </a>
-                            </li>
-                          ))}
-                        </NavigationMenuLink>
+                            </Link>
+                          </li>
+                        ))}
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
+
                   <NavigationMenuItem className="text-muted-foreground">
                     <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="w-80 p-3">
-                        <NavigationMenuLink>
-                          {subMenuItemsTwo.map((item, idx) => (
-                            <li key={idx}>
+                        {subMenuItemsTwo.map((item, idx) => (
+                          <li key={idx}>
+                            <Link href={item.link} passHref legacyBehavior>
                               <a
                                 className={cn(
-                                  'flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+                                  'flex select-none gap-4 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground'
                                 )}
-                                href="#"
                               >
                                 {item.icon}
                                 <div>
@@ -153,9 +157,9 @@ export const Navbar = () => {
                                   </p>
                                 </div>
                               </a>
-                            </li>
-                          ))}
-                        </NavigationMenuLink>
+                            </Link>
+                          </li>
+                        ))}
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
@@ -163,21 +167,30 @@ export const Navbar = () => {
               </NavigationMenu>
             </div>
           </div>
+
           <div className="flex gap-2">
             <Link href="/auth/login" passHref legacyBehavior>
-              <Button variant={'outline'}>Connexion</Button>
+              <a>
+                <Button variant={'outline'}>Connexion</Button>
+              </a>
             </Link>
           </div>
         </nav>
+
+        {/* Mobile Navbar */}
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <img
-                src="https://www.shadcnblocks.com/images/block/block-1.svg"
-                className="w-8"
-                alt="logo"
-              />
-              <span className="text-xl font-bold">CoPha</span>
+              <Link href="/" passHref legacyBehavior>
+                <a>
+                  <img
+                    src="https://www.shadcnblocks.com/images/block/block-1.svg"
+                    className="w-8"
+                    alt="logo"
+                  />
+                  <span className="text-xl font-bold">CoPha</span>
+                </a>
+              </Link>
             </div>
             <Sheet>
               <SheetTrigger asChild>
@@ -188,22 +201,23 @@ export const Navbar = () => {
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
-                    <Link href="/" passHref>
-                          <div className="flex items-center gap-2 mt-[-4%] ml-[-2%]">
-                      <img
-                        src="https://www.shadcnblocks.com/images/block/block-1.svg"
-                        className="w-8"
-                        alt="logo"
-                      />
-                      <span className="text-xl font-bold">CoPha</span>
-                    </div>
+                    <Link href="/" passHref legacyBehavior>
+                      <a className="flex items-center gap-2 mt-[-4%] ml-[-2%]">
+                        <img
+                          src="https://www.shadcnblocks.com/images/block/block-1.svg"
+                          className="w-8"
+                          alt="logo"
+                        />
+                        <span className="text-xl font-bold">CoPha</span>
+                      </a>
                     </Link>
                   </SheetTitle>
                 </SheetHeader>
+
                 <div className="my-8 flex flex-col gap-4">
-                  <a href="#" className="font-semibold">
-                    Accueil
-                  </a>
+                  <Link href="/" passHref legacyBehavior>
+                    <a className="font-semibold">Accueil</a>
+                  </Link>
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="Produits" className="border-b-0">
                       <AccordionTrigger className="mb-4 py-0 font-semibold hover:no-underline">
@@ -211,126 +225,136 @@ export const Navbar = () => {
                       </AccordionTrigger>
                       <AccordionContent className="mt-2">
                         {subMenuItemsOne.map((item, idx) => (
-                          <a
-                            key={idx}
-                            className={cn(
-                              'flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
-                            )}
-                            href="#"
-                          >
-                            {item.icon}
-                            <div>
-                              <div className="text-sm font-semibold">
-                                {item.title}
+                          <Link href={item.link} passHref legacyBehavior key={idx}>
+                            <a
+                              className={cn(
+                                'flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground'
+                              )}
+                            >
+                              {item.icon}
+                              <div>
+                                <div className="text-sm font-semibold">
+                                  {item.title}
+                                </div>
+                                <p className="text-sm leading-snug text-muted-foreground">
+                                  {item.description}
+                                </p>
                               </div>
-                              <p className="text-sm leading-snug text-muted-foreground">
-                                {item.description}
-                              </p>
-                            </div>
-                          </a>
+                            </a>
+                          </Link>
                         ))}
                       </AccordionContent>
                     </AccordionItem>
+
                     <AccordionItem value="resources" className="border-b-0">
                       <AccordionTrigger className="py-0 font-semibold hover:no-underline">
                         Resources
                       </AccordionTrigger>
                       <AccordionContent className="mt-2">
                         {subMenuItemsTwo.map((item, idx) => (
-                          <a
-                            key={idx}
-                            className={cn(
-                              'flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
-                            )}
-                            href="#"
-                          >
-                            {item.icon}
-                            <div>
-                              <div className="text-sm font-semibold">
-                                {item.title}
+                          <Link href={item.link} passHref legacyBehavior key={idx}>
+                            <a
+                              className={cn(
+                                'flex select-none gap-4 rounded-md p-3 leading-none outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground'
+                              )}
+                            >
+                              {item.icon}
+                              <div>
+                                <div className="text-sm font-semibold">
+                                  {item.title}
+                                </div>
+                                <p className="text-sm leading-snug text-muted-foreground">
+                                  {item.description}
+                                </p>
                               </div>
-                              <p className="text-sm leading-snug text-muted-foreground">
-                                {item.description}
-                              </p>
-                            </div>
-                          </a>
+                            </a>
+                          </Link>
                         ))}
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
                 </div>
+
                 <div className="border-t pt-4">
                   <div className="grid grid-cols-2 justify-start">
-                    <a
-                      className={cn(
-                        buttonVariants({
-                          variant: 'ghost',
-                        }),
-                        'justify-start text-muted-foreground',
-                      )}
-                      href="#"
-                    >
-                      Press
-                    </a>
-                    <a
-                      className={cn(
-                        buttonVariants({
-                          variant: 'ghost',
-                        }),
-                        'justify-start text-muted-foreground',
-                      )}
-                      href="#"
-                    >
-                      Contact
-                    </a>
-                    <a
-                      className={cn(
-                        buttonVariants({
-                          variant: 'ghost',
-                        }),
-                        'justify-start text-muted-foreground',
-                      )}
-                      href="#"
-                    >
-                      Imprint
-                    </a>
-                    <a
-                      className={cn(
-                        buttonVariants({
-                          variant: 'ghost',
-                        }),
-                        'justify-start text-muted-foreground',
-                      )}
-                      href="#"
-                    >
-                      Sitemap
-                    </a>
-                    <a
-                      className={cn(
-                        buttonVariants({
-                          variant: 'ghost',
-                        }),
-                        'justify-start text-muted-foreground',
-                      )}
-                      href="#"
-                    >
-                      Legal
-                    </a>
-                    <a
-                      className={cn(
-                        buttonVariants({
-                          variant: 'ghost',
-                        }),
-                        'justify-start text-muted-foreground',
-                      )}
-                      href="#"
-                    >
-                      Cookie Settings
-                    </a>
+                    <Link href="/press" passHref legacyBehavior>
+                      <a
+                        className={cn(
+                          buttonVariants({
+                            variant: 'ghost',
+                          }),
+                          'justify-start text-muted-foreground',
+                        )}
+                      >
+                        Press
+                      </a>
+                    </Link>
+                    <Link href="/contact" passHref legacyBehavior>
+                      <a
+                        className={cn(
+                          buttonVariants({
+                            variant: 'ghost',
+                          }),
+                          'justify-start text-muted-foreground',
+                        )}
+                      >
+                        Contact
+                      </a>
+                    </Link>
+                    <Link href="/imprint" passHref legacyBehavior>
+                      <a
+                        className={cn(
+                          buttonVariants({
+                            variant: 'ghost',
+                          }),
+                          'justify-start text-muted-foreground',
+                        )}
+                      >
+                        Imprint
+                      </a>
+                    </Link>
+                    <Link href="/sitemap" passHref legacyBehavior>
+                      <a
+                        className={cn(
+                          buttonVariants({
+                            variant: 'ghost',
+                          }),
+                          'justify-start text-muted-foreground',
+                        )}
+                      >
+                        Sitemap
+                      </a>
+                    </Link>
+                    <Link href="/legal" passHref legacyBehavior>
+                      <a
+                        className={cn(
+                          buttonVariants({
+                            variant: 'ghost',
+                          }),
+                          'justify-start text-muted-foreground',
+                        )}
+                      >
+                        Legal
+                      </a>
+                    </Link>
+                    <Link href="/cookie-settings" passHref legacyBehavior>
+                      <a
+                        className={cn(
+                          buttonVariants({
+                            variant: 'ghost',
+                          }),
+                          'justify-start text-muted-foreground',
+                        )}
+                      >
+                        Cookie Settings
+                      </a>
+                    </Link>
                   </div>
                   <div className="mt-2 flex flex-col gap-3">
                     <Link href="/auth/login" passHref legacyBehavior>
-                      <Button variant={'outline'}>Connexion</Button>
+                      <a>
+                        <Button variant={'outline'}>Connexion</Button>
+                      </a>
                     </Link>
                   </div>
                 </div>
