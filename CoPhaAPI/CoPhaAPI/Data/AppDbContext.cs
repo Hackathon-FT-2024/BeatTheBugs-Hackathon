@@ -52,47 +52,52 @@ namespace CoPhaAPI.Data
             var csvFilePath = Path.Combine(p);
             var cptAlims = new List<CptAlim>();
 
-            using (var reader = new StreamReader(csvFilePath))
+            if (File.Exists(csvFilePath))
             {
-                using (var parser = new TextFieldParser(reader))
+                using (var reader = new StreamReader(csvFilePath))
                 {
-                    parser.SetDelimiters(";");
-                    parser.HasFieldsEnclosedInQuotes = true;
-
-                    int idToIncrement = 1;
-                    while (!parser.EndOfData)
+                    using (var parser = new TextFieldParser(reader))
                     {
-                        var values = parser.ReadFields();
-                        if (values != null)
-                        {
-                            if (values[0].Contains("NomCommercial")) continue; //c'est l'entête donc on passe à la ligne suivante
+                        parser.SetDelimiters(";");
+                        parser.HasFieldsEnclosedInQuotes = true;
 
-                            var cptAlim = new CptAlim
+                        int idToIncrement = 1;
+                        while (!parser.EndOfData)
+                        {
+                            var values = parser.ReadFields();
+                            if (values != null)
                             {
-                                Ident = idToIncrement,
-                                Nom = values[0],
-                                Marque = values[1],
-                                FormeGalenique = values[2],
-                                Responsable = values[3],
-                                DoseJournaliere = values[4],
-                                ModeEmploi = values[5],
-                                MisesEnGarde = values[6],
-                                Gamme = values[7],
-                                Aromes = values[8],
-                                PopulationARisques = values[9],
-                                Plantes = values[10],
-                                FamillePlantes = values[11],
-                                PartiePlante = values[12],
-                                AutresIngredients = values[13],
-                                ObjectifEffets = values[14],
-                                Image = null
-                            };
-                            cptAlims.Add(cptAlim);
-                            idToIncrement++;
+                                if (values[0].Contains("NomCommercial")) continue; //c'est l'entête donc on passe à la ligne suivante
+
+                                var cptAlim = new CptAlim
+                                {
+                                    Ident = idToIncrement,
+                                    Nom = values[0],
+                                    Marque = values[1],
+                                    FormeGalenique = values[2],
+                                    Responsable = values[3],
+                                    DoseJournaliere = values[4],
+                                    ModeEmploi = values[5],
+                                    MisesEnGarde = values[6],
+                                    Gamme = values[7],
+                                    Aromes = values[8],
+                                    PopulationARisques = values[9],
+                                    Plantes = values[10],
+                                    FamillePlantes = values[11],
+                                    PartiePlante = values[12],
+                                    AutresIngredients = values[13],
+                                    ObjectifEffets = values[14],
+                                    Image = null
+                                };
+                                cptAlims.Add(cptAlim);
+                                idToIncrement++;
+                            }
                         }
                     }
                 }
             }
+
+
 
             return cptAlims;
         }

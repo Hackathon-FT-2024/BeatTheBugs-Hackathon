@@ -26,9 +26,9 @@ namespace CoPhaAPI.Controllers
 #pragma warning disable CS8620 // Impossible d'utiliser l'argument pour le paramètre, car il existe des différences dans l'acceptation des valeurs null par les types référence.
             return await _context.CptAlims
     .Include(c => c.RelCptEffets)              
-    .ThenInclude(ce => ce.Effet).Where(p => p.RelCptEffets != null && p.RelCptEffets.Any())
+    .ThenInclude(ce => ce.Effet)
     .Include(c => c.RelCptPops)
-    .ThenInclude(cp => cp.TypePopulation).Where(p => p.RelCptPops != null && p.RelCptPops.Any())
+    .ThenInclude(cp => cp.TypePopulation)
     .ToListAsync();
 #pragma warning restore CS8620 // Impossible d'utiliser l'argument pour le paramètre, car il existe des différences dans l'acceptation des valeurs null par les types référence.
         }
