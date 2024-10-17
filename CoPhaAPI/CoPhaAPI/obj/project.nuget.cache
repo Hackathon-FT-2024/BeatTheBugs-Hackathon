@@ -1,9 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "CO9/XPb0HK0=",
+=======
+  "dgSpecHash": "o9vvnT3OkvQ=",
+>>>>>>> 6998a9a912ce16e800e09795e95bdb386e92298c
   "success": true,
-  "projectFilePath": "C:\\Users\\jerem\\source\\repos\\Hackathon-FT-2024\\BeatTheBugs-Hackathon\\CoPhaAPI\\CoPhaAPI\\CoPhaAPI.csproj",
+  "projectFilePath": "/Users/sarahpham/Desktop/DEV/Hackathon/BeatTheBugs-Hackathon/CoPhaAPI/CoPhaAPI/CoPhaAPI.csproj",
   "expectedPackageFiles": [
+<<<<<<< HEAD
     "C:\\Users\\jerem\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\jerem\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\jerem\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -86,6 +91,14 @@
     "C:\\Users\\jerem\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
     "C:\\Users\\jerem\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\jerem\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+=======
+    "/Users/sarahpham/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/sarahpham/.nuget/packages/microsoft.openapi/1.6.14/microsoft.openapi.1.6.14.nupkg.sha512",
+    "/Users/sarahpham/.nuget/packages/swashbuckle.aspnetcore/6.6.2/swashbuckle.aspnetcore.6.6.2.nupkg.sha512",
+    "/Users/sarahpham/.nuget/packages/swashbuckle.aspnetcore.swagger/6.6.2/swashbuckle.aspnetcore.swagger.6.6.2.nupkg.sha512",
+    "/Users/sarahpham/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.6.2/swashbuckle.aspnetcore.swaggergen.6.6.2.nupkg.sha512",
+    "/Users/sarahpham/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.6.2/swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512"
+>>>>>>> 6998a9a912ce16e800e09795e95bdb386e92298c
   ],
   "logs": []
 }
