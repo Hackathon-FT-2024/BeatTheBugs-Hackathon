@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Outfit } from "next/font/google";
-import { Navbar } from "./Navbar";
-import Footer from "@components/Footer";
-import {PrivateLayout} from "./PrivateLayout"
+import { Navbar } from "../components/layouts/header/Navbar";
+import Footer from "@/components/layouts/Footer";
+import {PrivateLayout} from "../components/layouts/PrivateLayout"
 
 
 const outfit = Outfit({

@@ -1,4 +1,5 @@
 import { Book, Menu, Sunset, Trees, Zap } from 'lucide-react';
+import Link from 'next/link';
 
 import {
   Accordion,
@@ -70,12 +71,16 @@ export const Navbar = () => {
         <nav className="hidden justify-between lg:flex">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
-              <img
-                src="https://www.shadcnblocks.com/images/block/block-1.svg"
-                className="w-8"
-                alt="logo"
-              />
-              <span className="text-xl font-bold">Shadcn Blocks</span>
+              <Link href="/" passHref> {/* Use Link component directly */}
+                <div className="flex items-center gap-2 cursor-pointer">
+                  <img
+                    src="https://www.shadcnblocks.com/images/block/block-1.svg"
+                    className="w-8"
+                    alt="logo"
+                  />
+                  <span className="text-xl font-bold">CoPha</span>
+                </div>
+              </Link>
             </div>
             <div className="flex items-center">
               <a
@@ -86,7 +91,7 @@ export const Navbar = () => {
                     variant: 'ghost',
                   }),
                 )}
-                href="#"
+                href="/"
               >
                 Accueil
               </a>
@@ -168,7 +173,7 @@ export const Navbar = () => {
                 className="w-8"
                 alt="logo"
               />
-              <span className="text-xl font-bold">Shadcn Blocks</span>
+              <span className="text-xl font-bold">CoPha</span>
             </div>
             <Sheet>
               <SheetTrigger asChild>
@@ -185,7 +190,7 @@ export const Navbar = () => {
                         className="w-8"
                         alt="logo"
                       />
-                      <span className="text-xl font-bold">Shadcn Blocks</span>
+                      <span className="text-xl font-bold">CoPha</span>
                     </div>
                   </SheetTitle>
                 </SheetHeader>
