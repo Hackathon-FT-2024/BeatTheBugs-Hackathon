@@ -1,83 +1,138 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CoPhaAPI.Data;
+using CoPhaAPI.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoPhaAPI.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]  // Déclare que cette classe est un contrôleur d'API
     public class CptAlimController : Controller
     {
-        // GET: CptAlimController
-        public ActionResult Index()
+        private readonly AppDbContext _context;
+
+        // Injection du DbContext dans le contrôleur via le constructeur
+        public CptAlimController(AppDbContext context)
         {
-            return View();
+            _context = context;
         }
 
-        // GET: CptAlimController/Details/5
-        public ActionResult Details(int id)
+        // 1. GET: api/cptalim
+        // Récupérer tous les compléments alimentaires
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CptAlim>>> GetCptAlims()
         {
-            return View();
+#pragma warning disable CS8620 // Impossible d'utiliser l'argument pour le paramètre, car il existe des différences dans l'acceptation des valeurs null par les types référence.
+            return await _context.CptAlims
+    .Include(c => c.RelCptEffets)              
+    .ThenInclude(ce => ce.Effet).Where(p => p.RelCptEffets != null && p.RelCptEffets.Any())
+    .Include(c => c.RelCptPops)
+    .ThenInclude(cp => cp.TypePopulation).Where(p => p.RelCptPops != null && p.RelCptPops.Any())
+    .ToListAsync();
+#pragma warning restore CS8620 // Impossible d'utiliser l'argument pour le paramètre, car il existe des différences dans l'acceptation des valeurs null par les types référence.
         }
 
-        // GET: CptAlimController/Create
-        public ActionResult Create()
+        // 2. GET: api/cptalim/{id}
+        // Récupérer un complément alimentaire par son Id
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CptAlim>> GetCptAlim(int id)
         {
-            return View();
+            var cptAlim = await _context.CptAlims.FindAsync(id);
+
+            if (cptAlim == null)
+            {
+                return NotFound();  // Retourne un 404 si l n'est pas trouvé
+            }
+
+            return cptAlim;
         }
 
-        // POST: CptAlimController/Create
+
+
+
+        // 2. GET: api/cptalim/filter/{filter}
+        // Récupérer un complément alimentaire par 
+        // [HttpGet("{id}")]
+        //public async Task<ActionResult<Effet>> GetCptAlim(int id)
+        //{
+        //    var cptAlim = await _context.CptAlims.FindAsync(id);
+
+        //    if (cptAlim == null)
+        //    {
+        //        return NotFound();  // Retourne un 404 si l n'est pas trouvé
+        //    }
+
+        //    return cptAlim;
+        //}
+        // FILTRE A FAIRE !!!!
+
+        // + Pour le GET ajouter les images !!!
+
+        // 3. POST: api/cptalim
+        // Ajouter un nouveau complément alimentaire
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult<CptAlim>> PostCptAlim(CptAlim cptAlim)
         {
+            _context.CptAlims.Add(cptAlim);
+            await _context.SaveChangesAsync();  // Sauvegarde les changements dans la base de données
+
+            // Retourne un 201 Created avec l'URL du nouveau complément alimentaire
+            return CreatedAtAction(nameof(GetCptAlim), new { id = cptAlim.Ident }, cptAlim);
+        }
+
+        // 4. PUT: api/cptalim/{id}
+        // Mettre à jour un complément alimentaire
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutCptAlim(int id, CptAlim cptAlim)
+        {
+            if (id != cptAlim.Ident)
+            {
+                return BadRequest();  // Retourne un 400 Bad Request si l'Id ne correspond pas
+            }
+
+            _context.Entry(cptAlim).State = EntityState.Modified;
+
             try
             {
-                return RedirectToAction(nameof(Index));
+                await _context.SaveChangesAsync();  // Sauvegarde les modifications dans la base
             }
-            catch
+            catch (DbUpdateConcurrencyException)
             {
-                return View();
+                if (!EffetExists(id))
+                {
+                    return NotFound();  // Retourne un 404 si l'effet n'existe pas
+                }
+                else
+                {
+                    throw;  // Relance l'exception si une autre erreur se produit
+                }
             }
+
+            return NoContent();  // Retourne un 204 No Content si la mise à jour est réussie
         }
 
-        // GET: CptAlimController/Edit/5
-        public ActionResult Edit(int id)
+        // 5. DELETE: api/cptalim/{id}
+        // Supprimer un complément alimentaire par son Id
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCptAlim(int id)
         {
-            return View();
+            var cptAlim = await _context.CptAlims.FindAsync(id);
+            if (cptAlim == null)
+            {
+                return NotFound();  // Retourne un 404 si le produit n'existe pas
+            }
+
+            _context.CptAlims.Remove(cptAlim);  // Supprime l'effet
+            await _context.SaveChangesAsync();  // Sauvegarde les changements dans la base
+
+            return NoContent();  // Retourne un 204 No Content après la suppression
         }
 
-        // POST: CptAlimController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        // Méthode auxiliaire pour vérifier l'existence d'un complément alimentaire
+        private bool EffetExists(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: CptAlimController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: CptAlimController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return _context.CptAlims.Any(e => e.Ident == id);
         }
     }
 }
