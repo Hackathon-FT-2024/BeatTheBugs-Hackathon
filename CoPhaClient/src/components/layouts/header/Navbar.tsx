@@ -88,7 +88,7 @@ export const Navbar = () => {
               </Link>
             </div>
             <div className="flex items-center">
-              <Link href="/" passHref legacyBehavior>
+              <Link href="/contact" passHref legacyBehavior>
                 <a
                   className={cn(
                     'text-muted-foreground',
@@ -98,7 +98,7 @@ export const Navbar = () => {
                     })
                   )}
                 >
-                  Accueil
+                  Contact
                 </a>
               </Link>
 
@@ -215,8 +215,8 @@ export const Navbar = () => {
                 </SheetHeader>
 
                 <div className="my-8 flex flex-col gap-4">
-                  <Link href="/" passHref legacyBehavior>
-                    <a className="font-semibold">Accueil</a>
+                  <Link href="/contact" passHref legacyBehavior>
+                    <a className="font-semibold">Contact</a>
                   </Link>
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="Produits" className="border-b-0">

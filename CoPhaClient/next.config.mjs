@@ -5,7 +5,6 @@ const nextConfig = {
     },
   async redirects() {
       return [
-        ...['/about', '/contact'].map(source => ({ source, destination: '/maintenance', permanent: false})),
         { 
           source: '/login',
           destination: '/auth/login',
