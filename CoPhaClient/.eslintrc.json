@@ -1,0 +1,32 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": 
+    [
+    "next/core-web-vitals", "next/typescript",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+    ],
+    "plugins": ["react", "@typescript-eslint", "prettier"],
+    "rules": 
+      {
+        "prettier/prettier": 
+        ["error",
+          {
+            "tabWidth": 2,
+            "semi": true,
+            "endOfLine": "auto",
+            "singleQuote": false,
+            "trailingComma": "es5"
+          }       
+        ], 
+    "settings": 
+    {
+      "react": 
+      {
+        "version": "detect"
+      }
+    }
+}}
