@@ -4,3 +4,5 @@
 
 /CoPhaAPI/.vs/CoPhaAPI
 /CoPhaAPI/CoPhaAPI/appsettings.json
+/CoPhaAPI/CoPhaAPI/obj/Debug/net8.0/CoPhaAPI.AssemblyInfo.cs
+/CoPhaAPI/CoPhaAPI/obj/Debug/net8.0/CoPhaAPI.AssemblyInfoInputs.cache
