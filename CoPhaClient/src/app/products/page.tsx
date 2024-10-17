@@ -10,7 +10,6 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
 
-
 const productsList = [
   {
     id: 'item-1',
@@ -120,8 +119,8 @@ const Feature3 = () => {
           ))}
         </div>
 
-        {/* Pagination */}
         <div className="mt-8 flex justify-center">
+        {/* Pagination */}
           <Pagination>
             <PaginationContent>
                 <PaginationItem>
@@ -137,12 +136,29 @@ const Feature3 = () => {
                     <PaginationNext href="#" />
                 </PaginationItem>
                 </PaginationContent>
-            </Pagination>
-
+          </Pagination>
         </div>
       </div>
     </section>
   );
 };
 
+
 export default Feature3;
+
+
+// import ProductList from '@/components/products/productList';
+// import { ProductProvider } from '@/context/productContext';
+
+// const ProductListPage: React.FC = () => {
+//   return (
+//     <ProductProvider>
+//       <div className="container mx-auto p-4">
+//         <h1 className="text-3xl font-bold mb-6">Shop</h1>
+//         <ProductList />
+//       </div>
+//     </ProductProvider>
+//   );
+// };
+
+// export default ProductListPage;
