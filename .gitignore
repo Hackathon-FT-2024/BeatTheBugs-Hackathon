@@ -1,7 +1,0 @@
-﻿################################################################################
-# Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
-################################################################################
-
-/CoPhaAPI/.vs/CoPhaAPI/FileContentIndex
-/CoPhaAPI/.vs/CoPhaAPI/DesignTimeBuild
-/CoPhaClient
