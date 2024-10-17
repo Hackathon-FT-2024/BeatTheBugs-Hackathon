@@ -10,7 +10,6 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
 
-
 const productsList = [
   {
     id: 'item-1',
@@ -120,8 +119,8 @@ const Feature3 = () => {
           ))}
         </div>
 
-        {/* Pagination */}
         <div className="mt-8 flex justify-center">
+        {/* Pagination */}
           <Pagination>
             <PaginationContent>
                 <PaginationItem>
@@ -137,8 +136,7 @@ const Feature3 = () => {
                     <PaginationNext href="#" />
                 </PaginationItem>
                 </PaginationContent>
-            </Pagination>
-
+          </Pagination>
         </div>
       </div>
     </section>
