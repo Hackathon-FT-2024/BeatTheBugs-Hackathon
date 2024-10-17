@@ -8,6 +8,6 @@ namespace CoPhaAPI.Models
         public int Ident { get; set; }
         public string? NomEffet { get; set; }
 
-        public List<CptAlim>? ListComplement { get; set; }
+        public ICollection<RelCptEffet>? RelCptEffets { get; set; }
     }
 }
