@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Numerics;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CoPhaAPI.Controllers
 {
@@ -23,16 +26,55 @@ namespace CoPhaAPI.Controllers
         // 1. GET: api/cptalim
         // Récupérer tous les compléments alimentaires
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<CptAlim>>> GetCptAlims()
+        public async Task<ActionResult<IEnumerable<CptAlimDto>>> GetCptAlims()
         {
-#pragma warning disable CS8620 // Impossible d'utiliser l'argument pour le paramètre, car il existe des différences dans l'acceptation des valeurs null par les types référence.
-            return await _context.CptAlims
-    .Include(c => c.RelCptEffets)              
-    .ThenInclude(ce => ce.Effet).Where(p => p.RelCptEffets != null && p.RelCptEffets.Any())
-    .Include(c => c.RelCptPops)
-    .ThenInclude(cp => cp.TypePopulation).Where(p => p.RelCptPops != null && p.RelCptPops.Any())
-    .ToListAsync();
-#pragma warning restore CS8620 // Impossible d'utiliser l'argument pour le paramètre, car il existe des différences dans l'acceptation des valeurs null par les types référence.
+            var cptAlims = await _context.CptAlims
+                .Include(ca => ca.RelCptPops)
+                .ThenInclude(rcp => rcp.TypePopulation)
+                .Include(ca => ca.RelCptEffets)
+                .ThenInclude(rce => rce.Effet)
+                .ToListAsync();
+
+            var cptAlimDto = cptAlims.Select(ca => new CptAlimDto
+            {
+                Ident = ca.Ident,
+                Nom = ca.Nom,
+                Marque = ca.Marque,
+                FormeGalenique = ca.FormeGalenique,
+                Responsable = ca.Responsable,
+                DoseJournaliere = ca.DoseJournaliere,
+                ModeEmploi = ca.ModeEmploi,
+                MisesEnGarde = ca.MisesEnGarde,
+                Gamme = ca.Gamme,
+                Aromes = ca.Aromes,
+                PopulationARisques = ca.PopulationARisques,
+                Plantes = ca.Plantes,
+                FamillePlantes = ca.FamillePlantes,
+                PartiePlante = ca.PartiePlante,
+                AutresIngredients = ca.AutresIngredients,
+                ObjectifEffets = ca.ObjectifEffets,
+                Image = ca.Image,
+                TypePopulationDtos = ca.RelCptPops.Select(rcp => new TypePopulationDto
+                {
+                    Ident = rcp.TypePopulation.Ident,
+                    Libelle = rcp.TypePopulation.Libelle
+                }).ToList(),
+                EffetDtos = ca.RelCptEffets.Select(rce => new EffetDto
+                {
+                    Ident = rce.Effet.Ident,
+                    NomEffet = rce.Effet.NomEffet,
+                }).ToList(),
+            }).ToList();
+
+            return Ok(cptAlimDto);
+//#pragma warning disable CS8620 // Impossible d'utiliser l'argument pour le paramètre, car il existe des différences dans l'acceptation des valeurs null par les types référence.
+//            return await _context.CptAlims
+//                                .Include(c => c.RelCptEffets)
+//                                .ThenInclude(ce => ce.Effet)
+//                                .Include(c => c.RelCptPops)
+//                                .ThenInclude(cp => cp.TypePopulation)
+//                                .ToListAsync();
+//#pragma warning restore CS8620 // Impossible d'utiliser l'argument pour le paramètre, car il existe des différences dans l'acceptation des valeurs null par les types référence.
         }
 
         // 2. GET: api/cptalim/{id}
