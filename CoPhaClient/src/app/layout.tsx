@@ -4,7 +4,6 @@ import { Outfit } from "next/font/google";
 import { Navbar } from "@/components/layouts/header/Navbar";
 import Footer from "@/components/layouts/Footer";
 import { PrivateLayout } from "../components/layouts/PrivateLayout"
-import { Toaster } from "@/components/ui/toaster"
 
 
 const outfit = Outfit({
@@ -29,7 +28,6 @@ export default function RootLayout({
           <PrivateLayout>{children}</PrivateLayout>
           <Footer />
         </div>
-        <Toaster />
       </body>
     </html>
   );
