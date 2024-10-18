@@ -61,7 +61,6 @@ export const Navbar = () => {
               </Link>
             </div>
             <div className="flex items-center">
-            
             <Link href="/" passHref legacyBehavior>
                 <a
                   className={cn(
@@ -72,7 +71,7 @@ export const Navbar = () => {
                     })
                   )}
                 >
-                  Home
+                  Accueil
                 </a>
               </Link>
               <NavigationMenu>
@@ -97,18 +96,24 @@ export const Navbar = () => {
                     })
                   )}
                 >
-                  Contact
+                  Nous Contacter
                 </a>
               </Link>
             </div>
           </div>
 
           <div className="flex gap-2">
-            <Link href="/auth/login" passHref legacyBehavior>
+            <Link href="/dashboard" passHref legacyBehavior>
               <a>
-                <Button variant={'outline'}>Log In</Button>
+                <Button variant={'outline'}>Admin</Button>
               </a>
             </Link>
+            <Link href="/auth/login" passHref legacyBehavior>
+              <a>
+                <Button variant={'outline'}>Connexion</Button>
+              </a>
+            </Link>
+
           </div>
         </nav>
 
@@ -151,8 +156,18 @@ export const Navbar = () => {
 
                 <div className="my-8 flex flex-col gap-4">
                   <Link href="/" passHref legacyBehavior>
-                    <a className="font-semibold">Home</a>
-                  </Link>
+                <a
+                  className={cn(
+                    'text-muted-foreground',
+                    navigationMenuTriggerStyle,
+                    buttonVariants({
+                      variant: 'ghost',
+                    })
+                  )}
+                >
+                  Accueil
+                </a>
+              </Link>
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="Produits" className="border-b-0">
                       <AccordionTrigger className="mb-4 py-0 font-semibold hover:no-underline">
@@ -182,7 +197,7 @@ export const Navbar = () => {
                     </AccordionItem>
                   </Accordion>
                   <Link href="/contact" passHref legacyBehavior>
-                    <a className="font-semibold">Contact</a>
+                    <a className="font-semibold">Nous Contacter</a>
                   </Link>
                 </div>
 
@@ -209,7 +224,7 @@ export const Navbar = () => {
                           'justify-start text-muted-foreground',
                         )}
                       >
-                        Contact
+                        Contacte
                       </a>
                     </Link>
                     <Link href="/imprint" passHref legacyBehavior>
@@ -262,9 +277,14 @@ export const Navbar = () => {
                     </Link>
                   </div>
                   <div className="mt-2 flex flex-col gap-3">
+                    <Link href="/dashboard" passHref legacyBehavior>
+                      <a>
+                        <Button variant={'outline'}>Admin</Button>
+                      </a>
+                    </Link>
                     <Link href="/auth/login" passHref legacyBehavior>
                       <a>
-                        <Button variant={'outline'}>Log In</Button>
+                        <Button variant={'outline'}>Connexion</Button>
                       </a>
                     </Link>
                   </div>
