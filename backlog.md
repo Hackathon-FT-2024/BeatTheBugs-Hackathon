@@ -133,3 +133,55 @@
 - **Tasks**:
   - [ ] Add meta tags, alt text for images, and structured data for product pages.
   - [ ] Optimize URL structure and ensure each product has a clean, readable URL.
+
+# Back-End Backlog
+
+## 1. Data Model
+- **Priority**: High
+- **Status**: Finished
+- **Description**: Create models and context to generate Database and import data from CSV files.
+- **Tasks**:
+  - [x] Creation of the data model based on the MCD.
+  - [x] Creation of the connect class to generate the tables in the database and persist the data.
+  - [x] Added function to import data.
+
+## 2. Controller
+- **Priority**: High
+- **Status**: In progress
+- **Description**: API entry point.
+- **Tasks**:
+  - [x] Creation of controllers by model.
+  - [ ] customizing controllers according to front-end needs.
+
+## 3. JWT
+- **Priority**: High
+- **Status**: In progress
+- **Description**: Generate Token to secure API connexion.
+- **Tasks**:
+  - [x] Added controller for authentication.
+  - [ ] functioning with the User table.
+
+## 4. IIS Deploy
+- **Priority**: High
+- **Status**: Finished
+- **Description**: deploying the API on IIS for a local connection.
+- **Tasks**:
+  - [x] IIS deployment and configuration.
+
+## 5. Pictures import
+- **Priority**: High
+- **Status**: In progress
+- **Description**: Import pictures from front-end.
+- **Tasks**:
+  - [ ] Added a controller for upload.
+  - [ ] Added upload.
+  - [ ] generate URL.
+
+## 6. User account management
+- **Priority**: Medium
+- **Status**: In progress
+- **Description**: Add user account management to secure the application.
+- **Tasks**:
+  - [x] add model.
+  - [ ] Add Controller.
+  - [ ] Add interface.
