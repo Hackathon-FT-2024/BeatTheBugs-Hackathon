@@ -103,6 +103,26 @@ export const productData = [
     objectifEffets: "Antioxydant,Artères et cholestérol,Immunité,Ménopause",
     image: "https://cdn.pixabay.com/photo/2015/09/17/01/15/tablets-943765_1280.jpg",
   },
+  {
+    ident: 800,
+    nom: "ERBASTIM",
+    marque: "ELFIA NATURE",
+    formeGalenique: "Capsule",
+    responsable: "SAS ELFIA NATURE",
+    doseJournaliere: "3",
+    modeEmploi: "",
+    misesEnGarde: "",
+    gamme: "",
+    aromes: "",
+    populationARisques:
+      "Ulcère (estomac ou duodenum)",
+    plantes: "Pinus pinaster Aiton,Rosa canina L.",
+    famillePlantes: "",
+    partiePlante: "",
+    autresIngredients: "E464",
+    objectifEffets: "Antioxydant,Artères et cholestérol,Immunité,Ménopause",
+    image: "https://www.terravita.fr/media/cache/terravita_product_main_thumbnail_x2/ab/55/c02b21d9d28c5e4e422bb72e902a.png",
+  },
 ];
 
 

@@ -28,8 +28,8 @@ const Feature3 = () => {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Tout</SelectItem>
-                <SelectItem value="category1">Catérogie 1</SelectItem>
-                <SelectItem value="category2">Catérogie 2</SelectItem>
+                <SelectItem value="category1">Forme Galenique</SelectItem>
+                <SelectItem value="category2">Population à Risques</SelectItem>
               </SelectContent>
             </Select>
             <Badge variant="secondary">Catérogie</Badge>
@@ -46,14 +46,9 @@ const Feature3 = () => {
               <SelectContent>
                 <SelectItem value="priceAsc">Prix : du plus bas au plus élevé</SelectItem>
                 <SelectItem value="priceDesc">Prix : du plus élevé au plus bas
-
-
-
-
-
-
-</SelectItem>
+                </SelectItem>
                 <SelectItem value="popularity">Populaire</SelectItem>
+                 <SelectItem value="effets">Effets</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -64,7 +59,6 @@ const Feature3 = () => {
           {productData.map((item) => (
             <Card key={item.ident}>
               <CardHeader className="pb-1">
-                {/* Link wrapping the image */}
                 <Link href={`/products/${item.ident}`} passHref>
                 
                     <img src={item.image} alt={item.nom} className="h-40 w-full object-cover rounded-t-md" />
@@ -80,8 +74,9 @@ const Feature3 = () => {
                 <p className="leading-snug text-muted-foreground">{item.responsable}</p>
                 <p className="mt-2 font-bold">{item.marque}</p>
               </CardContent>
-              <CardFooter className="justify-end pb-0 pr-0">
-                <Button variant="outline">More detail</Button>
+              <CardFooter className="justify-end pb-5 pr-5">
+                <Link href={`/products/${item.ident}`} passHref legacyBehavior> 
+                <Button variant="outline">Plus de détail</Button></Link>
               </CardFooter>
             </Card>
           ))}
@@ -92,16 +87,16 @@ const Feature3 = () => {
           <Pagination>
             <PaginationContent>
                 <PaginationItem>
-                    <PaginationPrevious href="#" />
+                    <PaginationPrevious href="/" />
                 </PaginationItem>
                 <PaginationItem>
-                    <PaginationLink href="#">1</PaginationLink>
+                    <PaginationLink href="/">1</PaginationLink>
                 </PaginationItem>
                 <PaginationItem>
                     <PaginationEllipsis />
                 </PaginationItem>
                 <PaginationItem>
-                    <PaginationNext href="#" />
+                    <PaginationNext href="/" />
                 </PaginationItem>
                 </PaginationContent>
           </Pagination>
