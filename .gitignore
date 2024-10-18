@@ -21,3 +21,8 @@
 /CoPhaAPI/CoPhaAPI/Properties/PublishProfiles
 /CoPhaAPI/CoPhaAPI/CoPhaAPI.csproj.user
 /CoPhaAPI/CoPhaAPI/CoPhaAPI.csproj.user
+/CoPhaAPI/CoPhaAPI/obj/CoPhaAPI.csproj.nuget.dgspec.json
+/CoPhaAPI/CoPhaAPI/obj/CoPhaAPI.csproj.nuget.g.props
+/CoPhaAPI/CoPhaAPI/obj/project.assets.json
+/CoPhaAPI/CoPhaAPI/obj/CoPhaAPI.csproj.nuget.g.targets
+/CoPhaAPI/CoPhaAPI/obj/project.nuget.cache
