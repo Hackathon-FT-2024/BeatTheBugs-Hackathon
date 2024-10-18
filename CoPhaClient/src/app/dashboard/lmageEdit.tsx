@@ -14,32 +14,30 @@ export default function ImageEdit() {
             setImageUrl(image);
         }
     };
-    const handleSubmit = (e: any) => {
+    const handleSubmit = () => {
         //    make POST request to api
-        console.log(`axios.put(url, imageFile, {
-            headers: {
-                'Content-Type': imageFile.type
-            }
-            });`)
+        alert('Image ajoutée');
     };
 
     return (
-        <div className="container w-64 sm:w-96 mx-auto">
-            <div className="grid w-full max-w-sm items-center gap-1.5">
-                <label htmlFor="picture">Image</label>
-                <input
-                    id="picture"
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileChange}
-                />
+        <div className="container mx-auto">
+            <label htmlFor="picture">Image</label>
+            <div className="grid grid-cols-2 w-full max-w-sm items-center gap-1">
+
                 {imageUrl && (
                     <div>
-                        <img src={imageUrl} alt="Selected" style={{ maxWidth: "100%" }} />
+                        <img src={imageUrl} alt="Selected" style={{ maxWidth: "175px" }} />
                     </div>
                 )}
-
-                <Button type="submit" onSubmit={handleSubmit} className="w-20">Modifier</Button>
+                <div>
+                    <input
+                        id="picture"
+                        type="file"
+                        accept="image/*"
+                        onChange={handleFileChange}
+                    />
+                    <Button onClick={handleSubmit} className="w-20 mt-4">Ajouter</Button>
+                </div>
             </div>
         </div>
     )
