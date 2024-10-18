@@ -1,21 +1,22 @@
 import Link from "next/link";
 import { ArrowLeftIcon } from "@radix-ui/react-icons"
+import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
     return(
         <>
-        <main className="flex flex-col min-h-screen">
+ <main className="flex flex-col min-h-screen">
             <div className="mx-auto my-auto pb-[10%] w-3/4">
-                <div className="grid 2xs:max-2s:grid-rows-2 sm:grid-cols-8 sm:gap-4">
-                    <h1 className="my-auto sm:col-span-4 text-center sm:text-right font-semibold text-6xl sm:text-8xl ml:text-9xl xl:text-[9rem]">
-                    4O4
-                    </h1>
-                    <h1 className="my-auto sm:col-span-3 sm:col-end-8 ml:col-span-4 text-secondary text-center sm:text-left font-semibold text-3xl sm:text-4xl ml:text-6xl xl:text-[4.5rem]">
-                    Page <br className="hidden sm:inline"/>not found
-                    </h1>
-                </div>
-                <div className="grid grid-cols-1 my-2">
-                <Link className="text-xs sm:text-sm text-muted-foreground text-center hover:underline underline-offset-4" href="/">Return home</Link>
+                <div className="grid grid-rows-3 xs:gap-2">
+                    <h1 className="my-auto text-center font-semibold text-4xl xs:text-6xl">Be Right Back</h1>
+                    <h1 className="my-auto text-center text-secondary font-semibold text-2xl xs:text-4xl">This page is under construction</h1>
+                    <Link
+                    className="mx-auto mt-4 sm:mt-1 hover:underline underline-offset-4"
+                    href="/">
+                        <Button className="rounded-md bg-gradient-to-r sm:px-6 sm:py-2 text-xs sm:text-sm font-medium text-white transition-colors hover:from-blue-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Return Home
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </main>
