@@ -11,8 +11,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Beat The Bugs",
-  description: "On ne caisse pas les codes, on caisse les bugs",
+  title: "CoPha - Votre Santé en Compléments Alimentaires Naturels et Bien-Être",
+  description: "CoPha - Votre Santé en Compléments Alimentaires Naturels et Bien-Être",
 };
 
 export default function RootLayout({

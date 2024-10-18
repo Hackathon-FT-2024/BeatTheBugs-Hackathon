@@ -12,9 +12,9 @@ export default function NotFound() {
                     <h1 className="my-auto text-center text-secondary font-semibold text-2xl xs:text-4xl">This page is under construction</h1>
                     <Link
                     className="mx-auto mt-4 sm:mt-1 hover:underline underline-offset-4"
-                    href="/">
+                    href="/products">
                         <Button className="rounded-md bg-gradient-to-r sm:px-6 sm:py-2 text-xs sm:text-sm font-medium text-white transition-colors hover:from-blue-600 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                            Return Home
+                            Revenir
                         </Button>
                     </Link>
                 </div>

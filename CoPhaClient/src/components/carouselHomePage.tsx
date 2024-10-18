@@ -87,7 +87,7 @@ const CarouselHomePage = () => {
               href="#"
               className="group flex items-center text-xs font-medium md:text-base lg:text-lg"
             >
-              Achetez {' '}
+              Acheter {' '}
               <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
             </a>
             </Link>
@@ -159,7 +159,7 @@ const CarouselHomePage = () => {
                     {item.summary}
                   </div>
                   <div className="flex items-center text-sm">
-                    Affichez plus{' '}
+                    Afficher plus{' '}
                     <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
                   </div>
                 </a>
