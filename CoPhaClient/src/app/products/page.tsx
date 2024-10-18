@@ -9,58 +9,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
+import Link from 'next/link';
+import { productData } from '@/lib/constants';
 
-
-const productsList = [
-  {
-    id: 'item-1',
-    title: 'Product 1',
-    summary: 'Description for product 1',
-    href: '#',
-    image: 'https://cdn.pixabay.com/photo/2016/07/26/11/51/capsule-1542682_1280.jpg',
-    price: '$19.99',
-  },
-  {
-    id: 'item-2',
-    title: 'Product 2',
-    summary: 'Description for product 2',
-    href: '#',
-    image: 'https://cdn.pixabay.com/photo/2015/10/31/12/35/medicine-1015642_1280.jpg',
-    price: '$29.99',
-  },
-  {
-    id: 'item-3',
-    title: 'Product 3',
-    summary: 'Description for product 3',
-    href: '#',
-    image: 'https://cdn.pixabay.com/photo/2017/04/06/08/36/medicine-2207622_1280.jpg',
-    price: '$39.99',
-  },
-  {
-    id: 'item-4',
-    title: 'Product 4',
-    summary: 'Description for product 4',
-    href: '#',
-    image: 'https://cdn.pixabay.com/photo/2014/05/19/00/22/pills-347609_1280.jpg',
-    price: '$49.99',
-  },
-  {
-    id: 'item-5',
-    title: 'Product 5',
-    summary: 'Description for product 5',
-    href: '#',
-    image: 'https://cdn.pixabay.com/photo/2015/09/17/01/15/tablets-943765_1280.jpg',
-    price: '$59.99',
-  },
-  {
-    id: 'item-6',
-    title: 'Product 6',
-    summary: 'Description for product 6',
-    href: '#',
-    image: 'https://cdn.pixabay.com/photo/2015/09/18/21/05/pills-946406_1280.jpg',
-    price: '$69.99',
-  },
-];
 
 
 const Feature3 = () => {
@@ -103,25 +54,34 @@ const Feature3 = () => {
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {productsList.map((item) => (
-            <Card key={item.id}>
+          {productData.map((item) => (
+            <Card key={item.ident}>
               <CardHeader className="pb-1">
-                <img src={item.image} alt={item.title} className="h-40 w-full object-cover rounded-t-md" />
+                {/* Link wrapping the image */}
+                <Link href={`/products/${item.ident}`} passHref>
+                
+                    <img src={item.image} alt={item.nom} className="h-40 w-full object-cover rounded-t-md" />
+                
+                </Link>
               </CardHeader>
               <CardContent className="text-left">
-                <h2 className="mb-1 text-lg font-semibold">{item.title}</h2>
-                <p className="leading-snug text-muted-foreground">{item.summary}</p>
-                <p className="mt-2 font-bold">{item.price}</p>
+                <Link href={`/products/${item.ident}`} passHref legacyBehavior>
+                  <a className="mb-1 text-lg font-semibold hover:underline">
+                    <h2>{item.nom}</h2>
+                  </a>
+                </Link>
+                <p className="leading-snug text-muted-foreground">{item.responsable}</p>
+                <p className="mt-2 font-bold">{item.marque}</p>
               </CardContent>
               <CardFooter className="justify-end pb-0 pr-0">
-                <Button variant="outline">Add to Cart</Button>
+                <Button variant="outline">More detail</Button>
               </CardFooter>
             </Card>
           ))}
         </div>
 
-        {/* Pagination */}
         <div className="mt-8 flex justify-center">
+        {/* Pagination */}
           <Pagination>
             <PaginationContent>
                 <PaginationItem>
@@ -137,12 +97,29 @@ const Feature3 = () => {
                     <PaginationNext href="#" />
                 </PaginationItem>
                 </PaginationContent>
-            </Pagination>
-
+          </Pagination>
         </div>
       </div>
     </section>
   );
 };
 
+
 export default Feature3;
+
+
+// import ProductList from '@/components/products/productList';
+// import { ProductProvider } from '@/context/productContext';
+
+// const ProductListPage: React.FC = () => {
+//   return (
+//     <ProductProvider>
+//       <div className="container mx-auto p-4">
+//         <h1 className="text-3xl font-bold mb-6">Shop</h1>
+//         <ProductList />
+//       </div>
+//     </ProductProvider>
+//   );
+// };
+
+// export default ProductListPage;

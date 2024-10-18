@@ -1,4 +1,4 @@
-import { DollarSign, KeyRound, Timer } from 'lucide-react';
+import { DollarSign, Flame, KeyRound, Timer, Utensils } from 'lucide-react';
 
 export const Banner = () => {
     return (
@@ -10,15 +10,15 @@ export const Banner = () => {
 
                     <div className="w-full max-w-96 shrink-0 justify-between">
                         <h2 className="mb-3 mt-6 text-3xl font-medium lg:text-4xl">
-                            Banner
+                            Complémentaire alimentaire minceur
                         </h2>
                         <p className="text-sm text-muted-foreground">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Le contrôle du poids consiste à trouver un équilibre harmonieux entre alimentation, mode de vie et activité physique, tout en maîtrisant la prise ou la perte de poids. Cela implique de manger de manière équilibrée sans frustration, tout en évitant les excès et en modelant sa silhouette de façon progressive. La perte de poids devient plus facile lorsqu’elle est soutenue par des compléments alimentaires adaptés.
                         </p>
                     </div>
                     <div className="hidden w-full md:block">
                         <img
-                            src="https://www.shadcnblocks.com/images/block/placeholder-1.svg"
+                            src="https://www.nutrilifeshop.com/media/wysiwyg/poids.jpg"
                             alt="placeholder"
                             className="max-h-[400px] w-full rounded-lg border object-cover"
                         />
@@ -26,29 +26,29 @@ export const Banner = () => {
                 </div>
                 <div className="relative mt-12 grid md:grid-cols-3">
                     <div className="flex flex-col gap-y-6 px-2 py-10 md:p-6 lg:p-8">
-                        <Timer />
+                        <Flame />
                         <div>
-                            <h3 className="text-lg font-medium">Descrription</h3>
+                            <h3 className="text-lg font-medium">Métabolisme</h3>
                             <p className="mt-1 text-sm text-muted-foreground">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Les compléments minceur peuvent stimuler le métabolisme et augmenter la dépense calorique. Des ingrédients comme la caféine et le thé vert boostent l’énergie, aidant à brûler les graisses plus efficacement.
                             </p>
                         </div>
                     </div>
                     <div className="flex flex-col gap-y-6 px-2 py-10 md:p-6 lg:p-8">
-                        <DollarSign />
+                        <Utensils />
                         <div>
-                            <h3 className="text-lg font-medium">Descrription</h3>
+                            <h3 className="text-lg font-medium">Contrôle de l’appétit</h3>
                             <p className="mt-1 text-sm text-muted-foreground">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Certains compléments réduisent l’appétit grâce à des ingrédients comme le konjac. Ils favorisent la satiété, limitant ainsi les grignotages et facilitant la gestion des portions sans frustration.
                             </p>
                         </div>
                     </div>
                     <div className="flex flex-col gap-y-6 px-2 py-10 md:p-6 lg:p-8">
                         <KeyRound />
                         <div>
-                            <h3 className="text-lg font-medium">Description</h3>
+                            <h3 className="text-lg font-medium">Élimination des toxines et drainage</h3>
                             <p className="mt-1 text-sm text-muted-foreground">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Des plantes drainantes comme la piloselle aident à éliminer l'excès d'eau et les toxines. Elles réduisent la rétention d’eau, permettant d'affiner la silhouette plus rapidement.
                             </p>
                         </div>
                     </div>
