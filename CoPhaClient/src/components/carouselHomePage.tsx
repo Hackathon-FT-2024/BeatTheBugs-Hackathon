@@ -14,45 +14,46 @@ import {
 const data = [
   {
     id: 'item-1',
-    title: 'Duis sem sem, gravida vel porttitor eu, volutpat ut arcu',
+    title: 'Complément Minceur : Brûleur de Graisse Naturel',
     summary:
-      'Pellentesque eget quam ligula. Sed felis ante, consequat nec ultrices ut, ornare quis metus. Vivamus sit amet tortor vel enim sollicitudin hendrerit.',
+      'Ce complément aide à accélérer le métabolisme et à brûler les graisses plus rapidement. Formulé à base de thé vert et de guarana, il soutient la perte de poids tout en augmentant l’énergie.',
     href: '#',
-    image: 'https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg',
+    image: 'https://www.nutrisolution.fr/cdn/shop/files/Exislim_x1_86bfff20-ea80-463d-ac35-46953f2405a4.png?v=1702982218&width=1200',
   },
   {
     id: 'item-2',
-    title: 'Duis sem sem, gravida vel porttitor eu, volutpat ut arcu',
+    title: 'Complément Articulations : Flexibilité et Mobilité',
     summary:
-      'Pellentesque eget quam ligula. Sed felis ante, consequat nec ultrices ut, ornare quis metus. Vivamus sit amet tortor vel enim sollicitudin hendrerit.',
+      'Soutenez la santé de vos articulations avec un complément à base de glucosamine et de chondroïtine. Idéal pour les personnes actives et les seniors souhaitant maintenir leur mobilité.',
     href: '#',
-    image: 'https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg',
+    image: 'https://www.terravita.fr/media/cache/terravita_product_main_thumbnail_x2/6d/a3/31206eddae8fd3bb2f9844a4bf61.png',
   },
   {
     id: 'item-3',
-    title: 'Duis sem sem, gravida vel porttitor eu, volutpat ut arcu',
+    title: 'Vitamines Immunité : Renforcez vos Défenses',
     summary:
-      'Pellentesque eget quam ligula. Sed felis ante, consequat nec ultrices ut, ornare quis metus. Vivamus sit amet tortor vel enim sollicitudin hendrerit.',
+      'Un boost de vitamine C et de zinc pour renforcer le système immunitaire et protéger l’organisme contre les infections. Parfait pour les périodes hivernales ou de stress.',
     href: '#',
-    image: 'https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg',
+    image: 'https://apyforme.com/cdn/shop/files/FACING-WEB_2024-MULTIVITAMINES.png?v=1717491555',
   },
   {
     id: 'item-4',
-    title: 'Duis sem sem, gravida vel porttitor eu, volutpat ut arcu',
+    title: 'Complément Anti-Stress : Sérénité et Détente',
     summary:
-      'Pellentesque eget quam ligula. Sed felis ante, consequat nec ultrices ut, ornare quis metus. Vivamus sit amet tortor vel enim sollicitudin hendrerit.',
+      'Ce complément à base de magnésium et de rhodiola aide à réduire le stress et à améliorer la qualité du sommeil. Idéal pour un quotidien plus calme et équilibré.',
     href: '#',
-    image: 'https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg',
+    image: 'https://www.betteroption.fr/cdn/shop/files/Reduit_le_stress_physique_et_mentale_1.png?v=1726390345&width=990',
   },
   {
     id: 'item-5',
-    title: 'Duis sem sem, gravida vel porttitor eu, volutpat ut arcu',
+    title: 'Complément Énergie : Vitalité et Endurance',
     summary:
-      'Pellentesque eget quam ligula. Sed felis ante, consequat nec ultrices ut, ornare quis metus. Vivamus sit amet tortor vel enim sollicitudin hendrerit.',
+      'Formulé pour augmenter l’énergie et améliorer les performances physiques, ce complément est parfait pour les sportifs ou ceux qui recherchent un coup de pouce dans leur journée.',
     href: '#',
-    image: 'https://www.shadcnblocks.com/images/block/placeholder-dark-1.svg',
+    image: 'https://ndlprohealth.com/cdn/shop/files/Regeneradormuscular.jpg?crop=center&height=1000&v=1703232980&width=1000',
   },
 ];
+
 
 const CarouselHomePage = () => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
@@ -78,7 +79,7 @@ const CarouselHomePage = () => {
         <div className="mb-8 flex flex-col justify-between md:mb-14 md:flex-row md:items-end lg:mb-16">
           <div>
             <h2 className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
-              Gallery
+              Nos produits phare
             </h2>
             <a
               href="#"
@@ -155,7 +156,7 @@ const CarouselHomePage = () => {
                     {item.summary}
                   </div>
                   <div className="flex items-center text-sm">
-                    Read more{' '}
+                    Affichez plus{' '}
                     <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
                   </div>
                 </a>

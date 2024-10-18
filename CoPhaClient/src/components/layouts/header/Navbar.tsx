@@ -79,10 +79,11 @@ export const Navbar = () => {
                 <NavigationMenuList>
                   <NavigationMenuItem className="text-muted-foreground">
                     <Link href="/products" passHref legacyBehavior>
-                       <NavigationMenuTrigger>
+                      <NavigationMenuTrigger>
                       <span>Shop</span>
                     </NavigationMenuTrigger>
                     </Link>
+                    
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
