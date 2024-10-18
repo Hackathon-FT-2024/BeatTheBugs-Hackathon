@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 import { useState } from "react";
 
-export default function ProductEdit() {
+export default function ImageEdit() {
 
     const [imageUrl, setImageUrl] = useState("");
 
@@ -16,24 +16,31 @@ export default function ProductEdit() {
     };
     const handleSubmit = (e: any) => {
         //    make POST request to api
+        console.log(`axios.put(url, imageFile, {
+            headers: {
+                'Content-Type': imageFile.type
+            }
+            });`)
     };
 
     return (
-        <div className="grid w-full max-w-sm items-center gap-1.5">
-            <label htmlFor="picture">Image</label>
-            <input
-                id="picture"
-                type="file"
-                accept="image/*"
-                onChange={handleFileChange}
-            />
-            {imageUrl && (
-                <div>
-                    <img src={imageUrl} alt="Selected" style={{ maxWidth: "100%" }} />
-                </div>
-            )}
+        <div className="container w-64 sm:w-96 mx-auto">
+            <div className="grid w-full max-w-sm items-center gap-1.5">
+                <label htmlFor="picture">Image</label>
+                <input
+                    id="picture"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleFileChange}
+                />
+                {imageUrl && (
+                    <div>
+                        <img src={imageUrl} alt="Selected" style={{ maxWidth: "100%" }} />
+                    </div>
+                )}
 
-            <Button type="submit" onSubmit={handleSubmit} className="w-20">Modifier</Button>
+                <Button type="submit" onSubmit={handleSubmit} className="w-20">Modifier</Button>
+            </div>
         </div>
     )
 }

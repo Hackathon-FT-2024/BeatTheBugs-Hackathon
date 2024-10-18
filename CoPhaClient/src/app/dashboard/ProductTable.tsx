@@ -1,6 +1,6 @@
 "use client"
 
-import { AlignJustify } from "lucide-react"
+import { Pencil } from "lucide-react"
 import {
     Table,
     TableBody,
@@ -18,19 +18,11 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@components/ui/dialog";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 
 import ProductEdit from "./ProductEdit";
-import ImageEdit from "./lmageEdit";
-import { SetStateAction } from "react";
+import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode, SetStateAction } from "react";
 import { useState } from "react";
+import ImageEdit from "./lmageEdit";
 
 export default function ProductTable(products: { products: [] }) {
     const [listProducts, setListProducts] = useState(products.products);
@@ -78,37 +70,20 @@ export default function ProductTable(products: { products: [] }) {
                                 </ol>
                             </TableCell>
                             <TableCell>
-                                {/* <Button variant="ghost" size="sm"></Button> */}
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger><AlignJustify /></DropdownMenuTrigger>
-                                    <DropdownMenuContent>
-                                        <DropdownMenuItem>
-                                            <Dialog>
-                                                <DialogTrigger>Modifier le produit
-                                                </DialogTrigger>
-                                                <DialogContent>
-                                                    <DialogHeader>
-                                                        <DialogTitle>Modifier le produit</DialogTitle>
-                                                        <DialogDescription>
-                                                            <ProductEdit />
-                                                        </DialogDescription>
-                                                    </DialogHeader>
-                                                </DialogContent>
-                                            </Dialog></DropdownMenuItem>
-                                        <DropdownMenuItem><Dialog>
-                                            <DialogTrigger>Changer l'image
-                                            </DialogTrigger>
-                                            <DialogContent>
-                                                <DialogHeader>
-                                                    <DialogTitle>Changer l'image</DialogTitle>
-                                                    <DialogDescription>
-                                                        <ImageEdit />
-                                                    </DialogDescription>
-                                                </DialogHeader>
-                                            </DialogContent>
-                                        </Dialog></DropdownMenuItem>
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
+                                <Dialog>
+                                    <DialogTrigger>
+                                        <Pencil style={{ maxHeight: "14px", maxWidth: "14px" }} />
+                                    </DialogTrigger>
+                                    <DialogContent>
+                                        <DialogHeader>
+                                            <DialogTitle>Modifier le produit</DialogTitle>
+                                            <DialogDescription>
+                                                <ProductEdit />
+                                                <ImageEdit />
+                                            </DialogDescription>
+                                        </DialogHeader>
+                                    </DialogContent>
+                                </Dialog>
                             </TableCell>
                         </TableRow>
                     ))}
