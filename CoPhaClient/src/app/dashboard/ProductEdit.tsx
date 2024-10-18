@@ -33,16 +33,17 @@ export default function ProductEdit() {
         },
     });
 
-    function onSubmit(values: z.infer<typeof productEditSchema>) {
-        console.log(values);
-    }
+    const handleSubmit = () => {
+        //    make POST request to api
+        alert('Produit modifié');
+    };
 
     return (
         <>
-            <div className="container w-64 sm:w-96 mx-auto">
+            <div className="container mx-auto">
                 <Form {...LogInForm}>
                     <form
-                        onSubmit={LogInForm.handleSubmit(onSubmit)}
+                        // onSubmit={LogInForm.handleSubmit(onSubmit)}
                         className="space-y-4"
                     >
                         <FormField
@@ -104,7 +105,7 @@ export default function ProductEdit() {
                             )}
                         />
                         <div className="w-auto flex flex-auto place-content-center py-3">
-                            <Button type="submit" className="w-40 text-md">
+                            <Button onClick={handleSubmit} className="w-40 text-md">
                                 Modifier
                             </Button>
                         </div>
