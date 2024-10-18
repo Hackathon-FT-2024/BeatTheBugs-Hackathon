@@ -10,6 +10,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from '@/components/ui/carousel';
+import Link from 'next/link';
 
 const data = [
   {
@@ -81,6 +82,7 @@ const CarouselHomePage = () => {
             <h2 className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
               Nos produits phare
             </h2>
+            <Link href="/products" passHref legacyBehavior>
             <a
               href="#"
               className="group flex items-center text-xs font-medium md:text-base lg:text-lg"
@@ -88,6 +90,7 @@ const CarouselHomePage = () => {
               Achetez {' '}
               <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
             </a>
+            </Link>
           </div>
           <div className="mt-8 flex shrink-0 items-center justify-center gap-2">
             <Button

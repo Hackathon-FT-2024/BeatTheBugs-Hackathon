@@ -24,29 +24,36 @@ const Feature3 = () => {
           <div className="flex gap-4">
             <Select>
               <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Filter by Category" />
+                <SelectValue placeholder="Filtrer par catégorie" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">All</SelectItem>
-                <SelectItem value="category1">Category 1</SelectItem>
-                <SelectItem value="category2">Category 2</SelectItem>
+                <SelectItem value="all">Tout</SelectItem>
+                <SelectItem value="category1">Catérogie 1</SelectItem>
+                <SelectItem value="category2">Catérogie 2</SelectItem>
               </SelectContent>
             </Select>
-            <Badge variant="secondary">Category</Badge>
-            <Badge variant="secondary">Price Range</Badge>
+            <Badge variant="secondary">Catérogie</Badge>
+            <Badge variant="secondary">Prix</Badge>
           </div>
 
           {/* Sorting */}
           <div className="flex gap-4 items-center">
-            <Input placeholder="Search Products" className="w-[200px]" />
+            <Input placeholder="Rechercher un produit, une marque ..." className="w-[300px]" />
             <Select>
               <SelectTrigger className="w-[150px]">
-                <SelectValue placeholder="Sort by" />
+                <SelectValue placeholder="Trier par" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="priceAsc">Price: Low to High</SelectItem>
-                <SelectItem value="priceDesc">Price: High to Low</SelectItem>
-                <SelectItem value="popularity">Popularity</SelectItem>
+                <SelectItem value="priceAsc">Prix : du plus bas au plus élevé</SelectItem>
+                <SelectItem value="priceDesc">Prix : du plus élevé au plus bas
+
+
+
+
+
+
+</SelectItem>
+                <SelectItem value="popularity">Populaire</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -108,18 +115,3 @@ const Feature3 = () => {
 export default Feature3;
 
 
-// import ProductList from '@/components/products/productList';
-// import { ProductProvider } from '@/context/productContext';
-
-// const ProductListPage: React.FC = () => {
-//   return (
-//     <ProductProvider>
-//       <div className="container mx-auto p-4">
-//         <h1 className="text-3xl font-bold mb-6">Shop</h1>
-//         <ProductList />
-//       </div>
-//     </ProductProvider>
-//   );
-// };
-
-// export default ProductListPage;

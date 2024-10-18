@@ -66,12 +66,12 @@ const Footer = () => {
             </div>
             <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Follow us
+                Suivez-nous
               </h2>
               <ul className="text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
                   <a
-                    href="https://github.com/imbhargav5"
+                    href="https://github.com/Hackathon-FT-2024/BeatTheBugs-Hackathon"
                     className="hover:underline "
                   >
                     Github
@@ -89,12 +89,12 @@ const Footer = () => {
             </div>
             <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Legal
+                Mentions légales
               </h2>
               <ul className="text-gray-600 dark:text-gray-400">
                 <li className="mb-4">
                   <a href="/auth/login" className="hover:underline">
-                    Privacy Policy
+                    Politique de confidentialité
                   </a>
                 </li>
                 <li>
