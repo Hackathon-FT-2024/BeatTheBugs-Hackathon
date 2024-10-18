@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace CoPhaAPI.Models
 {
@@ -7,7 +8,7 @@ namespace CoPhaAPI.Models
         [Key]
         public int Ident { get; set; }
         public string? Libelle { get; set; }
-
-        public List<CptAlim>? ListComplement { get; set; }
+        [JsonIgnore]
+        public ICollection<RelCptPop>? RelCptPops { get; set; }
     }
 }

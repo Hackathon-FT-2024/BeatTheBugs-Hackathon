@@ -1,83 +1,112 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CoPhaAPI.Data;
+using CoPhaAPI.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CoPhaAPI.Controllers
 {
-    public class EffetController : Controller
+    [Route("api/[controller]")]
+    [ApiController]  // Déclare que cette classe est un contrôleur d'API
+    [Authorize] // pour le token
+    public class EffetController : ControllerBase
     {
-        // GET: EffetController
-        public ActionResult Index()
+        private readonly AppDbContext _context;
+
+        // Injection du DbContext dans le contrôleur via le constructeur
+        public EffetController(AppDbContext context)
         {
-            return View();
+            _context = context;
         }
 
-        // GET: EffetController/Details/5
-        public ActionResult Details(int id)
+        // 1. GET: api/effets
+        // Récupérer tous les effets
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Effet>>> GetEffets()
         {
-            return View();
+            return await _context.Effets.ToListAsync();
         }
 
-        // GET: EffetController/Create
-        public ActionResult Create()
+        // 2. GET: api/effet/{id}
+        // Récupérer un effet par son Id
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Effet>> GetEffet(int id)
         {
-            return View();
+            var effet = await _context.Effets.FindAsync(id);
+
+            if (effet == null)
+            {
+                return NotFound();  // Retourne un 404 si l'effet n'est pas trouvé
+            }
+
+            return effet;
         }
 
-        // POST: EffetController/Create
+        // 3. POST: api/effet
+        // Ajouter un nouveau effet
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult<Effet>> PostEffet(Effet effet)
         {
+            _context.Effets.Add(effet);
+            await _context.SaveChangesAsync();  // Sauvegarde les changements dans la base de données
+
+            // Retourne un 201 Created avec l'URL du nouvel effet
+            return CreatedAtAction(nameof(GetEffet), new { id = effet.Ident }, effet);
+        }
+
+        // 4. PUT: api/effet/{id}
+        // Mettre à jour un effet existant
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutEffet(int id, Effet effet)
+        {
+            if (id != effet.Ident)
+            {
+                return BadRequest();  // Retourne un 400 Bad Request si l'Id ne correspond pas
+            }
+
+            _context.Entry(effet).State = EntityState.Modified;
+
             try
             {
-                return RedirectToAction(nameof(Index));
+                await _context.SaveChangesAsync();  // Sauvegarde les modifications dans la base
             }
-            catch
+            catch (DbUpdateConcurrencyException)
             {
-                return View();
+                if (!EffetExists(id))
+                {
+                    return NotFound();  // Retourne un 404 si l'effet n'existe pas
+                }
+                else
+                {
+                    throw;  // Relance l'exception si une autre erreur se produit
+                }
             }
+
+            return NoContent();  // Retourne un 204 No Content si la mise à jour est réussie
         }
 
-        // GET: EffetController/Edit/5
-        public ActionResult Edit(int id)
+        // 5. DELETE: api/effet/{id}
+        // Supprimer un effet par son Id
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEffet(int id)
         {
-            return View();
+            var effet = await _context.Effets.FindAsync(id);
+            if (effet == null)
+            {
+                return NotFound();  // Retourne un 404 si le produit n'existe pas
+            }
+
+            _context.Effets.Remove(effet);  // Supprime l'effet
+            await _context.SaveChangesAsync();  // Sauvegarde les changements dans la base
+
+            return NoContent();  // Retourne un 204 No Content après la suppression
         }
 
-        // POST: EffetController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        // Méthode auxiliaire pour vérifier l'existence d'un produit
+        private bool EffetExists(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: EffetController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: EffetController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return _context.Effets.Any(e => e.Ident == id);
         }
     }
 }

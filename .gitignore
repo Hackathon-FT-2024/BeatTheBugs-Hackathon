@@ -12,6 +12,7 @@
 /CoPhaAPI/.vs/CoPhaAPI/v17/DocumentLayout.backup.json
 /CoPhaAPI/.vs/CoPhaAPI/v17/DocumentLayout.json
 <<<<<<< HEAD
+<<<<<<< HEAD
 /CoPhaAPI/CoPhaAPI/bin/Release/net8.0
 /CoPhaAPI/CoPhaAPI/obj/Debug/net8.0/CoPhaAPI.AssemblyInfo.cs
 /CoPhaAPI/CoPhaAPI/obj/Debug/net8.0/CoPhaAPI.AssemblyInfoInputs.cache
@@ -40,3 +41,20 @@
 /CoPhaAPI/.vs/ProjectEvaluation/cophaapi.strings.v9.bin
 /CoPhaAPI/.vs/ProjectEvaluation/cophaapi.projects.v9.bin
 >>>>>>> f59518b9bd35941f03bbc0033c515e29c4517630
+=======
+/.vs/BeatTheBugs-Hackathon/FileContentIndex/8aebda22-a1a1-469b-a40c-177a6fdf4f4d.vsidx
+*.vsidx
+/.vs
+/CoPhaAPI/.vs/ProjectEvaluation
+/CoPhaAPI/CoPhaAPI/obj
+/CoPhaAPI/.vs/CoPhaAPI/v17/.futdcache.v2
+/CoPhaAPI/CoPhaAPI/bin/Release/net8.0
+/CoPhaAPI/CoPhaAPI/Properties/PublishProfiles
+/CoPhaAPI/CoPhaAPI/CoPhaAPI.csproj.user
+/CoPhaAPI/CoPhaAPI/CoPhaAPI.csproj.user
+/CoPhaAPI/CoPhaAPI/obj/CoPhaAPI.csproj.nuget.dgspec.json
+/CoPhaAPI/CoPhaAPI/obj/CoPhaAPI.csproj.nuget.g.props
+/CoPhaAPI/CoPhaAPI/obj/project.assets.json
+/CoPhaAPI/CoPhaAPI/obj/CoPhaAPI.csproj.nuget.g.targets
+/CoPhaAPI/CoPhaAPI/obj/project.nuget.cache
+>>>>>>> api
