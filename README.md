@@ -1,44 +1,69 @@
-# Team Introduction: Beat the Bugs
-
-## Team Members
-
-1. **Thi Ha** - Front-End Developer
-   - As the team leader, Ha brings a wealth of experience in crafting user-friendly interfaces. With a focus on design and functionality, she ensures that our applications not only look great but also provide an exceptional user experience.
-
-2. **Fara** - Front-End Developer
-   - Fara is passionate about turning ideas into interactive web applications. Her expertise in HTML, CSS, and JavaScript, combined with knowledge of React, allows her to create visually appealing and responsive designs that engage users effectively.
-
-3. **Michael** - Back-End Developer
-   - Michael is our back-end expert, specializing in server-side development using .NET. He excels at building robust APIs and managing databases, ensuring that our applications run smoothly and efficiently.
-
-4. **Jeremy** - Back-End Developer
-   - Jeremy complements the team with his skills in system architecture and data management. His attention to detail and problem-solving abilities make him an invaluable asset in creating reliable back-end solutions with .NET.
-
-## Project Overview
-
-For this hackathon, our team will develop a cutting-edge project using **.NET** for the back end and **React** for the front end.
-CoPha is a web app for exploring and managing dietary supplements. 
-
-## Methodology
-
-We will follow **Agile methodology** to manage our tasks effectively. 
-
-## Team Vision
-
-At **Beat the Bugs**, we believe in the power of collaboration and creativity. Our diverse skills and backgrounds come together to tackle challenges head-on. We are dedicated to finding innovative solutions, tracking down bugs, and fine-tuning our code for optimal performance.
-
-## What We Aim to Achieve
-
-During this hackathon, we aim to create a project that showcases our technical abilities and creativity while leveraging our skills in .NET and React. We are excited to learn from other participants and mentors while contributing our unique perspectives to the event.
-
 # Hackathon Results: CoPha Wins UX/UI Design Prize!
 
-We are thrilled to announce that after an intense and rewarding hackathon, CoPha has won the Best UX/UI Design prize!
+We are thrilled to announce that **CoPha** won the **Best UX/UI Design** prize at the recent hackathon! Our focus on delivering a user-friendly, intuitive, and visually appealing interface for managing dietary supplements impressed the judges and earned us this recognition.
 
-## Screenshots
+## Key Achievements:
+- **Smooth Navigation**: Users can easily browse and find products.
+- **Responsive Design**: Optimized for both mobile and desktop.
+- **Clear Product Information**: Organized, user-friendly layouts with clear supplement details.
 
-<img width="1552" alt="Home Page" src="https://i.imgur.com/WhpVVp1.png[/img]">
-<img width="1552" alt="Home Page" src="https://i.imgur.com/jlUOxSk.png[/img]">
-<img width="1552" alt="Home Page" src="https://i.imgur.com/naKintH.png[/img]">
-<img width="1552" alt="Home Page" src="https://i.imgur.com/CtoT7HS.png[/img]">
-<img width="1552" alt="Home Page" src="https://i.imgur.com/jcbbJQX.png[/img]">
+### Screenshots:
+![Home Page](https://i.imgur.com/WhpVVp1.png)
+![Shop Page](https://i.imgur.com/jlUOxSk.png)
+![Contact Page](https://i.imgur.com/naKintH.png)
+![Dashboard](https://i.imgur.com/CtoT7HS.png)
+![LogIn Page](https://i.imgur.com/jcbbJQX.png)
+
+---
+
+# Project Overview: CoPha
+
+**CoPha** is a web application designed to help users explore and manage dietary supplements easily. The app features a seamless user experience for searching, filtering, and viewing supplement details.
+
+### Tech Stack:
+- **Frontend**: Nextjs
+- **Backend**: .NET Core 8
+
+Our goal was to create a simple yet powerful platform that combines a clean interface with efficient backend architecture.
+
+---
+
+## Challenges and Learnings
+
+While developing CoPha, we faced several technical challenges :
+
+1. **Git Configuration**
+2. **Database Setup** 
+3. **API and Client-Side Communication**
+
+We have made significant progress in addressing these challenges and are confident that with ongoing efforts, we will continue to improve the overall performance of the application.
+
+---
+
+# Team Introduction: Beat the Bugs
+
+## Team Members:
+
+1. **Thi Ha** - Front-End Developer
+   - As the team leader, Ha focuses on design and user-friendly interfaces. She ensures that our applications not only look great but provide an excellent user experience.
+
+2. **Fara** - Front-End Developer
+   - Fara specializes in turning ideas into interactive web applications. With her expertise in HTML, CSS, JavaScript, and React, she ensures the application is both engaging and responsive.
+
+3. **Michael** - Back-End Developer
+   - Michael is the back-end specialist, building APIs and managing databases using .NET. His efforts guarantee smooth operation and data management for the application.
+
+4. **Jeremy** - Back-End Developer
+   - Jeremy supports the team with system architecture and data management. His attention to detail ensures that our back-end is robust and reliable.
+
+---
+## Methodology
+
+We followed **Agile methodology** to manage our tasks effectively. 
+
+# Team Vision
+
+At **Beat the Bugs**, we believe in the power of collaboration and creativity. Our diverse skills and backgrounds allow us to tackle challenges head-on. We are dedicated to finding innovative solutions, resolving bugs, and fine-tuning our code for optimal performance.
+
+Our aim during this hackathon was to create a project that showcases our technical abilities in both **.NET** and **Nextjs**, and this UX/UI design award is a testament to our efforts.
+
