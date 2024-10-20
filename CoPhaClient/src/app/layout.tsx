@@ -3,7 +3,7 @@ import "./globals.css";
 import { Outfit } from "next/font/google";
 import { Navbar } from "@/components/layouts/header/Navbar";
 import Footer from "@/components/layouts/Footer";
-import {PrivateLayout} from "../components/layouts/PrivateLayout"
+import { PrivateLayout } from "../components/layouts/PrivateLayout"
 
 
 const outfit = Outfit({
@@ -24,9 +24,9 @@ export default function RootLayout({
     <html lang="fr">
       <body className={`${outfit.className} antialiased`}>
         <div className="flex pt-2 flex-col min-h-screen bg-white dark:bg-gray-900">
-          <Navbar/>
+          <Navbar />
           <PrivateLayout>{children}</PrivateLayout>
-          <Footer/>
+          <Footer />
         </div>
       </body>
     </html>

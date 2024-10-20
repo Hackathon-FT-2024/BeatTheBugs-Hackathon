@@ -1,44 +1,34 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
+"use client";
 
-import { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
-import { Icon } from 'leaflet';
-import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
-
-Icon.Default.mergeOptions({
-    iconRetinaUrl: markerIcon2x,
-    iconUrl: markerIcon,
-    shadowUrl: markerShadow,
-});
-
-//TODO: fix marker not showing & fix margin in map
-
-export default function MapComponent() {
+const Map = () => {
+    const mapRef = useRef(null);
 
     useEffect(() => {
-        if (typeof window === 'undefined') {
-            return;
-        }
+        const L = require('leaflet');
+
+        const map = L.map(mapRef.current).setView([43.57283566122207, 3.8515948812631953], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([43.57283566122207, 3.85159488126319539]).addTo(map)
+            .bindPopup('Rue Théophraste Renaudot<br />34430 Saint-Jean-de-Védas.')
+            .openPopup();
+
+        return () => {
+            map.remove();
+        };
     }, []);
 
     return (
-        <MapContainer
-            center={[43.57283566122207, 3.8515948812631953]}
-            zoom={13}
-            style={{ height: '450px', width: '100%' }}
-        >
-            <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            />
-            <Marker position={[43.57283566122207, 3.8515948812631953]}>
-                <Popup>
-                    Rue Théophraste Renaudot<br />34430 Saint-Jean-de-Védas.
-                </Popup>
-            </Marker>
-        </MapContainer>
+        <div>
+            <div ref={mapRef} style={{ height: '450px', width: '100%' }} />
+        </div>
     );
 };
+
+export default Map;
