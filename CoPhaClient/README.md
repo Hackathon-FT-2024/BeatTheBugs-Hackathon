@@ -1,6 +1,7 @@
-# Boilerplate-Nextjs-FT
 
-This is a boilerplate built for Next.js.
+# CoPha - Frontend
+
+CoPha is a web app for exploring and managing dietary supplements. Built using **React.js**, it provides a clean, responsive interface for users to browse, filter, and view detailed product information.
 
 ## Prerequisites
 

@@ -2,7 +2,7 @@
 
 ## Team Members
 
-1. **Ha** - Front-End Developer
+1. **Thi Ha** - Front-End Developer
    - As the team leader, Ha brings a wealth of experience in crafting user-friendly interfaces. With a focus on design and functionality, she ensures that our applications not only look great but also provide an exceptional user experience.
 
 2. **Fara** - Front-End Developer
@@ -16,11 +16,12 @@
 
 ## Project Overview
 
-For this hackathon, our team will develop a cutting-edge project using **.NET** for the back end and **React** for the front end. This combination allows us to create a powerful, responsive application that meets modern user demands.
+For this hackathon, our team will develop a cutting-edge project using **.NET** for the back end and **React** for the front end.
+CoPha is a web app for exploring and managing dietary supplements. 
 
 ## Methodology
 
-We will follow **Agile methodology** to manage our tasks effectively. This approach enables us to adapt to changes quickly, prioritize tasks based on project needs, and maintain open communication within our team. By using Agile practices, we can ensure that we stay on track and deliver high-quality results.
+We will follow **Agile methodology** to manage our tasks effectively. 
 
 ## Team Vision
 
@@ -29,3 +30,15 @@ At **Beat the Bugs**, we believe in the power of collaboration and creativity. O
 ## What We Aim to Achieve
 
 During this hackathon, we aim to create a project that showcases our technical abilities and creativity while leveraging our skills in .NET and React. We are excited to learn from other participants and mentors while contributing our unique perspectives to the event.
+
+# Hackathon Results: CoPha Wins UX/UI Design Prize!
+
+We are thrilled to announce that after an intense and rewarding hackathon, CoPha has won the Best UX/UI Design prize!
+
+## Screenshots
+
+<img width="1552" alt="Home Page" src="https://i.imgur.com/WhpVVp1.png[/img]">
+<img width="1552" alt="Home Page" src="https://i.imgur.com/jlUOxSk.png[/img]">
+<img width="1552" alt="Home Page" src="https://i.imgur.com/naKintH.png[/img]">
+<img width="1552" alt="Home Page" src="https://i.imgur.com/CtoT7HS.png[/img]">
+<img width="1552" alt="Home Page" src="https://i.imgur.com/jcbbJQX.png[/img]">
