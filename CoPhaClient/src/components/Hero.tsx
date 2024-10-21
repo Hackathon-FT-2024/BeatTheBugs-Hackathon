@@ -17,12 +17,12 @@ export const Hero = () => (
                 <div className="flex flex-row gap-3">
                     <Link href="/products" passHref legacyBehavior>
                         <Button size="lg" className="gap-4" variant="outline">
-                            Shop <ShoppingBag className="w-4 h-4" />
+                            Recherche <Search className="w-4 h-4" />
                         </Button>
                     </Link>
                     <Link href="/maintenance" passHref legacyBehavior> 
                         <Button size="lg" className="gap-4">
-                            Recherche <Search className="w-4 h-4" />
+                            Shop <ShoppingBag className="w-4 h-4" />
                         </Button>
                         </Link>
                    
